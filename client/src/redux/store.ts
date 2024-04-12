@@ -1,11 +1,16 @@
 // импорт устаревшего метода legacy_createStore + переименование
 import { useDispatch, useSelector, type TypedUseSelectorHook } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
+import userSlice from '../Components/Auth/AuthSlice'
 // Слайсы - это отдельные модули нашего приложения. У каждого слайса - свой редьюсер.
 
 const store = configureStore({
   // теперь функция combineReducers не нужна
-  reducer: {},
+  reducer: {
+    user: userSlice
+
+  },
+
 });
 
 // для правильной типизации будем использовать useAppDispatch вместо
