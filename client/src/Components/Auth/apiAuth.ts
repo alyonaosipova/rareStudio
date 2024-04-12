@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import axios, { type AxiosResponse } from 'axios';
-import type { UserUpForm, User } from './types/user'
+import type { UserUpForm, User, UserInForm } from './types/user'
 
 
 // eslint-disable-next-line import/prefer-default-export
@@ -7,3 +8,18 @@ export const signUpFetch = async(obj: UserUpForm): Promise<User> => {
     const response: AxiosResponse<{message: string, user: User}> = await axios.post(`/api/sign/up`, obj)
     return response.data.user
 } 
+
+export const checkFetch = async (): Promise<User>  => {
+    const res: AxiosResponse<{message: string, user: User}> = await axios.get(`/api/sign/check`)
+    return res.data.user
+}
+
+export const logFetch = async(obj: UserInForm): Promise<User> => {
+    const res: AxiosResponse<{message: string, user: User}> = await axios.post(`/api/sign/in`, obj)
+    return res.data.user
+}
+
+export const logOutFetch = async (): Promise<User>  => {
+    const res: AxiosResponse<{message: string, user: User}> = await axios.get(`/api/sign/out`)
+    return res.data.user
+}
