@@ -34,6 +34,97 @@
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
+
+  /* max-width: 1280px; */
+  margin: 0 auto;
+  /* padding: 2rem; */
+  text-align: center;
+}
+
+.App.dark {
+  background-color: #242424;
+  color: rgb(231, 221, 223);
+}
+
+.App.light {
+  background-color: rgb(89, 36, 105);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: center; /* Выравнивание по центру по горизонтали */
+  align-items: center; /* Выравнивание по центру по вертикали */
+  background-color: #333;
+  padding: 10px 20px;
+}
+
+.navbar {
+  display: flex;
+  flex-grow: 1; /* Растягиваем навбар на всю доступную ширину */
+  justify-content: space-between; /* Равномерное распределение элементов по горизонтали */
+}
+
+.navbar-link {
+  color: #fff;
+  margin-top: 7px;
+  text-decoration: none;
+}
+
+.switchBtn.light {
+  /* margin-top: 10px; */
+  background-color: #242424;
+}
+
+.switchBtn.dark {
+  /* margin-top: 10px; */
+  background-color: rgb(89, 36, 105);
+}
+
+.switchBtn.light:hover {
+  /* margin-top: 10px; */
+  background-color: #242424;
+  color: #d194db;
+}
+
+.switchBtn.dark:hover {
+  /* margin-top: 10px; */
+  background-color: rgb(89, 36, 105);
+  color: #dbc4df;
+}
+
+.btnAdd.light {
+  background-color: #242424;
+  margin: 5px;
+}
+
+.btnAdd.dark {
+  background-color: rgb(89, 36, 105);
+  margin: 5px;
+}
+
+a {
+  font-weight: 500;
+  color: #edeef4;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #d194db;
+}
+
+.delProduct.light,
+.updProduct.light {
+  background-color: #242424;
+  margin: 5px;
+}
+
+.delProduct.dark,
+.updProduct.dark {
+  background-color: rgb(89, 36, 105);
+  margin: 5px;
+}
+/* .icons {
+  width: 20px;
+
 }
 
 .card {
@@ -42,4 +133,6 @@
 
 .read-the-docs {
   color: #888;
+
 }
+
