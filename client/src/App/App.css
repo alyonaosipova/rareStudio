@@ -1,0 +1,226 @@
+#root {
+  /* max-width: 1280px; */
+  margin: 0 auto;
+  /* padding: 2rem; */
+  text-align: center;
+}
+
+.App.dark {
+  background-color: #242424;
+  color: rgb(231, 221, 223);
+}
+
+.App.light {
+  background-color: rgb(89, 36, 105);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: center; /* Выравнивание по центру по горизонтали */
+  align-items: center; /* Выравнивание по центру по вертикали */
+  background-color: #333;
+  padding: 10px 20px;
+}
+
+.navbar {
+  display: flex;
+  flex-grow: 1; /* Растягиваем навбар на всю доступную ширину */
+  justify-content: space-between; /* Равномерное распределение элементов по горизонтали */
+}
+
+.navbar-link {
+  color: #fff;
+  margin-top: 7px;
+  text-decoration: none;
+}
+
+.switchBtn.light {
+  /* margin-top: 10px; */
+  background-color: #242424;
+}
+
+.switchBtn.dark {
+  /* margin-top: 10px; */
+  background-color: rgb(89, 36, 105);
+}
+
+.switchBtn.light:hover {
+  /* margin-top: 10px; */
+  background-color: #242424;
+  color: #d194db;
+}
+
+.switchBtn.dark:hover {
+  /* margin-top: 10px; */
+  background-color: rgb(89, 36, 105);
+  color: #dbc4df;
+}
+
+.btnAdd.light {
+  background-color: #242424;
+  margin: 5px;
+}
+
+.btnAdd.dark {
+  background-color: rgb(89, 36, 105);
+  margin: 5px;
+}
+
+a {
+  font-weight: 500;
+  color: #edeef4;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #d194db;
+}
+
+.delProduct.light,
+.updProduct.light {
+  background-color: #242424;
+  margin: 5px;
+}
+
+.delProduct.dark,
+.updProduct.dark {
+  background-color: rgb(89, 36, 105);
+  margin: 5px;
+}
+/* .icons {
+  width: 20px;
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
+
+.selectWrapper {
+  position: relative;
+  width: calc(100% - 20px); /* Учитывайте padding для .addProductForm */
+  margin-bottom: 7px; /* Отступ между select и другими полями */
+}
+
+.selectForm {
+  width: 100%; /* Ширина select должна быть 100% от родительского элемента */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #242424;
+}
+
+.registration,
+.loginform,
+.updateProduct,
+.addProductForm {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Выравнивание элементов по центру */
+  width: 300px; /* Ширина формы */
+  padding: 20px;
+  border: 1px solid #ccc; /* Рамка формы */
+  border-radius: 5px; /* Скругление углов */
+  background-color: #f9f9f9; /* Цвет фона формы */
+}
+
+.registration input,
+.loginform input,
+.addProductForm input,
+.updateProduct input {
+  width: 100%; /* Ширина инпутов */
+  margin-bottom: 7px; /* Отступ между инпутами */
+  padding: 10px; /* Отступ внутри инпутов */
+  border: 1px solid #ccc; /* Рамка инпутов */
+  border-radius: 5px; /* Скругление углов инпутов */
+  background-color: #242424;
+}
+
+.registration input:focus,
+.loginform input:focus,
+.addProductForm input:focus,
+.updateProduct input:focus {
+  outline: none; /* Убираем стандартную рамку при фокусе */
+  border-color: rgb(159, 103, 197); /* Устанавливаем цвет рамки при фокусе */
+  /* box-shadow: 0 0 0 2px #007bff; Добавляем эффект тени вместо рамки при фокусе */
+}
+
+.textInBar:hover {
+  cursor: pointer;
+  color: rgb(86, 21, 129);
+}
+
+.errRega {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.errAddProduc,
+.peshka,
+.errProductsUpdate,
+.errAddProduct,
+.errLogin_message {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.categorii {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 100px;
+}
+
+.categories {
+  text-align: center;
+  /* border: 2px solid black; */
+}
+
+.productCard {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  /* border: 2px solid black; */
+}
+
+.img {
+  display: block; /* Убедитесь, что изображение является блочным элементом */
+  margin-top: 50px;
+  width: 1000px;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.picture {
+  width: 400px;
+  margin: 10px;
+  border-radius: 20px;
+}
+
+.title {
+  color: rgb(86, 21, 129);
+  font-size: 23px;
+}
+
+.price {
+  font-size: 23px;
+  font-weight: bolder;
+}
+
+/* a {
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+} */
