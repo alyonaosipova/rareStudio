@@ -3,7 +3,6 @@ export type User = {
     email: string,
     name: string,
     password: string,
-    scores: number,
     createdAt: string,
     updatedAt: string,
 }
@@ -21,6 +20,6 @@ export type UserUpForm = {
 }
 
 export type UserLoad = {
-user: User | null,
-error: string | undefined
+user: User | undefined,
+message: string | undefined
 }
