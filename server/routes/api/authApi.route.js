@@ -4,13 +4,13 @@ const { generateTokens } = require("../../utils/authUtils");
 const cookiesConfig = require("../../config/cookiesConfig");
 const {User} = require('../../db/models/user')
 
-router.post('registration', async(req,res) =>{
+router.post('/up', async(req,res) =>{
+    
     try {
         const{name, email, password, r_password} = req.body;
-
+       
         if(name && email && password && r_password){
             const globalRegex = /^[_a-z0-9-\+-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i;
-
             if(globalRegex.test(email)){
                 let user = await User.findOne({ where: { email } })
 
@@ -46,7 +46,7 @@ router.post('registration', async(req,res) =>{
       }
 })
 
-router.post('/login', async (req, res) => {
+router.post('/sign/in', async (req, res) => {
     try {
       const { email, password } = req.body;
   
