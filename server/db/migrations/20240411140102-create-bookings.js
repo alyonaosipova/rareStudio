@@ -29,6 +29,13 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
+      status: {
+        allowNull: false,
+        type: Sequelize.ENUM({
+          values: ['confirmed', 'pending', 'rejected', 'completed']
+        }),
+        defaultValue:'pending'
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -43,3 +50,4 @@ module.exports = {
     await queryInterface.dropTable('Bookings');
   }
 };
+//
