@@ -2,18 +2,20 @@ const router = require("express").Router();
 const bcrypt = require("bcrypt");
 const { generateTokens } = require("../../utils/authUtils");
 const cookiesConfig = require("../../config/cookiesConfig");
-const {User} = require('../../db/models/user')
+const {User} = require('../../db/models')
 
-router.post('/up', async(req,res) =>{
-    
+router.post('/sign-up', async(req,res) =>{
+    let user;
+    // console.log(req.body,'1');
     try {
         const{name, email, password, r_password} = req.body;
-       
+        // console.log(req.body,'2');
         if(name && email && password && r_password){
-            const globalRegex = /^[_a-z0-9-\+-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i;
+            
+            const globalRegex = /^[^@]+@[^@]{2,}\.[^@]{2,}$/;
             if(globalRegex.test(email)){
-                let user = await User.findOne({ where: { email } })
-
+                 user = await User.findOne({ where: { email } })
+                
             if(user){
                 res.status(400).json({ message: 'Такой пользователь уже существует' });
             } else {
@@ -36,6 +38,7 @@ router.post('/up', async(req,res) =>{
           res.status(201).json({ message: 'ok', user: { name: user.name, id: user.id } });
             }
             }else {
+                console.log(req.body,'2')
                 res.status(400).json({ message: 'Ваша почта не соответствует формату' });
             }
         } else {
@@ -46,7 +49,7 @@ router.post('/up', async(req,res) =>{
       }
 })
 
-router.post('/sign/in', async (req, res) => {
+router.post('/sign-in', async (req, res) => {
     try {
       const { email, password } = req.body;
   
