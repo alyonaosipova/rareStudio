@@ -1,10 +1,11 @@
 // tasks/tasksSlice.ts
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-// import * as api from '../../app/api';
-// import type { Service, ServiceType } from './types/servicesType';
+import * as api from './apiServices';
+import type { Service, ServiceType } from './types/servicesType';
 
 const initialState: ServiceType = {
   services: [],
+  message: '',
 };
 
 export const loadServices = createAsyncThunk('services/loadServices', () =>
@@ -27,12 +28,7 @@ const serviceSlice = createSlice({
         state.services = action.payload;
       })
       .addCase(loadServices.rejected, (state, action) => {
-        // показываем как меняется state если загрузка не прошла
-        state.error = action.error.message;
-      })
-      .addCase(loadServices.pending, (state, action) => {
-        // показываем как меняется state если загрузка не прошла
-        //// loader
+        state.message = action.error.message;
       });
   },
 });

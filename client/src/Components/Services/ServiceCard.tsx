@@ -10,13 +10,13 @@ function ServiceCard({ service }: { service: Service }): JSX.Element {
 
       <p>{service.description}</p>
       <div className="buttonService">
-        <button className="deleteService" type="button" onClick={delService}>
+        <button className="deleteService" type="button">
           delete
-          <img className="icons" src="/img/del.gif" alt="..." />
+          {/* <img className="icons" src="/img/del.gif" alt="..." /> */}
         </button>
         <button type="button">
           update
-          <img className="icons" src="/img/update.gif" alt="..." />
+          {/* <img className="icons" src="/img/update.gif" alt="..." /> */}
         </button>
       </div>
     </div>
