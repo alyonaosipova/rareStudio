@@ -4,7 +4,9 @@
   /* padding: 2rem; */
   text-align: center;
 }
-
+.borderBottom {
+  border-bottom: 1px solid white;
+}
 .App.dark {
   background-color: #242424;
   color: rgb(231, 221, 223);

@@ -1,18 +1,22 @@
 import { useAppDispatch } from '../../redux/store';
+import { delService } from './serviceSlice';
 import type { Service } from './types/ServicesType';
 
 function ServiceCard({ service }: { service: Service }): JSX.Element {
   const dispatch = useAppDispatch();
 
+  const deleteService = (): void => {
+    dispatch(delService(service.id)).catch(console.log);
+  };
   return (
     <div className="serviceCard" data-id={service.id}>
       <h3>{service.title}</h3>
 
       <p>{service.description}</p>
       <div className="buttonService">
-        <button className="deleteService" type="button">
+        <button className="deleteService" type="button" onClick={deleteService}>
           delete
-          {/* <img className="icons" src="/img/del.gif" alt="..." /> */}
+          <img className="icons" src="..." alt="..." />
         </button>
         <button type="button">
           update
