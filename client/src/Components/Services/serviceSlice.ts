@@ -1,7 +1,7 @@
 // tasks/tasksSlice.ts
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import * as api from '../../app/api';
-import type { Service, ServiceType } from './types/servicesType';
+// import * as api from '../../app/api';
+// import type { Service, ServiceType } from './types/servicesType';
 
 const initialState: ServiceType = {
   services: [],
@@ -24,7 +24,7 @@ const serviceSlice = createSlice({
       .addCase(loadServices.fulfilled, (state, action) => {
         // здесь можно мутировать state
         // RTK создаст копию state автоматически
-        state.tasks = action.payload;
+        state.services = action.payload;
       })
       .addCase(loadServices.rejected, (state, action) => {
         // показываем как меняется state если загрузка не прошла
