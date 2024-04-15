@@ -8,6 +8,7 @@ function Main({ theme, toggleTheme }: { theme: string; toggleTheme: () => void }
   return (
     <div>
       <Navbar toggleTheme={toggleTheme} theme={theme} />
+
       <Outlet />
       <Footer />
     </div>

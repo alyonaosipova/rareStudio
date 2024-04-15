@@ -6,7 +6,10 @@ import Header from '../Header/Header';
 function MainPage(): JSX.Element {
   return (
     <>
-      <Header/>
+
+    
+      <Header />
+
       <button type="button">Забронировать время</button>
 
       <Carousel />

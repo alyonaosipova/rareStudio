@@ -1,14 +1,17 @@
 // tasks/tasksSlice.ts
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-// import * as api from '../../app/api';
-// import type { Service, ServiceType } from './types/servicesType';
+import * as api from './apiServices';
+import type { IdService, Service, ServiceType } from './types/servicesType';
 
 const initialState: ServiceType = {
   services: [],
+  message: '',
 };
 
-export const loadServices = createAsyncThunk('services/loadServices', () =>
-  api.loadServicesFetch(),
+export const loadServices = createAsyncThunk('services/load', () => api.loadServicesFetch());
+
+export const delService = createAsyncThunk('services/delete', (id: IdService) =>
+  api.delServicesFetch(id),
 );
 // export const addTasks = createAsyncThunk('services/addServices', (service: Service) =>
 //   api.loadServicesFetch(service),
@@ -27,12 +30,13 @@ const serviceSlice = createSlice({
         state.services = action.payload;
       })
       .addCase(loadServices.rejected, (state, action) => {
-        // показываем как меняется state если загрузка не прошла
-        state.error = action.error.message;
+        state.message = action.error.message;
       })
-      .addCase(loadServices.pending, (state, action) => {
-        // показываем как меняется state если загрузка не прошла
-        //// loader
+      .addCase(delService.fulfilled, (state, action) => {
+        state.services = state.services.filter((el) => el.id !== action.payload);
+      })
+      .addCase(delService.rejected, (state, action) => {
+        state.message = action.error.message;
       });
   },
 });

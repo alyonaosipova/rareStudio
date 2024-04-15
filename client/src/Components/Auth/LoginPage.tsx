@@ -39,6 +39,7 @@ function SignInForm(): JSX.Element {
                 <h2>Еще не зарегистрированы?</h2>
             </main>
     );
+
 }
 
 export default SignInForm;

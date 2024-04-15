@@ -1,10 +1,12 @@
 #root {
-  /* max-width: 1280px; */
+  max-width: 100%;
   margin: 0 auto;
   /* padding: 2rem; */
   text-align: center;
 }
-
+.borderBottom {
+  border-bottom: 1px solid white;
+}
 .App.dark {
   background-color: #000000;
   color: rgb(231, 221, 223);
@@ -15,36 +17,35 @@
 }
 
 .carousel {
-  height: 400px; /* Задаем желаемую ширину для изображения */
+  height: 400px;
 }
 
 .photos-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* Расстояние между изображениями */
+  gap: 20px;
 }
 
 .photos {
-  width: calc(20% - 20px); /* Ширина изображения (20% минус расстояние) */
-  transition: transform 0.3s ease; /* Плавный переход при наведении */
+  width: calc(20% - 20px);
+  transition: transform 0.3s ease;
 }
 
-/* При наведении */
 .photos:hover {
-  transform: scale(1.1); /* Увеличение размера при наведении */
+  transform: scale(1.1);
 }
 .navbar-container {
   display: flex;
-  justify-content: center; /* Выравнивание по центру по горизонтали */
-  align-items: center; /* Выравнивание по центру по вертикали */
+  justify-content: center;
+  align-items: center;
   background-color: #333;
   padding: 10px 20px;
 }
 
 .navbar {
   display: flex;
-  flex-grow: 1; /* Растягиваем навбар на всю доступную ширину */
-  justify-content: space-between; /* Равномерное распределение элементов по горизонтали */
+  flex-grow: 1;
+  justify-content: space-between;
 }
 
 .navbar-link {
@@ -54,23 +55,19 @@
 }
 
 .switchBtn.light {
-  /* margin-top: 10px; */
   background-color: #242424;
 }
 
 .switchBtn.dark {
-  /* margin-top: 10px; */
   background-color: rgb(89, 36, 105);
 }
 
 .switchBtn.light:hover {
-  /* margin-top: 10px; */
   background-color: #242424;
   color: #d194db;
 }
 
 .switchBtn.dark:hover {
-  /* margin-top: 10px; */
   background-color: rgb(89, 36, 105);
   color: #dbc4df;
 }
