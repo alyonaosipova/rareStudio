@@ -15,11 +15,11 @@ export const checkFetch = async (): Promise<User>  => {
 }
 
 export const logFetch = async(obj: UserInForm): Promise<User> => {
-    const res: AxiosResponse<{message: string, user: User}> = await axios.post(`/api//auth/sign-in`, obj)
+    const res: AxiosResponse<{message: string, user: User}> = await axios.post(`/api/auth/sign-in`, obj)
     return res.data.user
 }
 
 export const logOutFetch = async (): Promise<User>  => {
-    const res: AxiosResponse<{message: string, user: User}> = await axios.get(`/api/auth/logout`)
-    return res.data.user
+    const res: AxiosResponse<{message: string, user: User}> = await axios.get(`/api/auth/logout`)   
+    return res.data
 }

@@ -38,7 +38,7 @@ function SignInForm(): JSX.Element {
             // const serverCheck: AxiosResponse<{message: string, user: User}> = await axios.post(`/api/sign/in`, form)
             // if (serverCheck.data.message === 'success') {
                 dispatch(authLogin({...form})).catch(console.log)
-                navigate('/main')
+                navigate('/')
             // } else {
                 // setTitle(serverCheck.data.message)
                 // getModal()
