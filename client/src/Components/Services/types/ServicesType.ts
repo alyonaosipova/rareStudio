@@ -10,3 +10,5 @@ export type ServiceType = {
   services: Service[];
   message: string | undefined;
 };
+
+export type IdService = Service['id'];

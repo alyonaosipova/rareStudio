@@ -1,10 +1,18 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import axios, { type AxiosResponse } from 'axios';
-import { Service, ServiceType } from './types/servicesType';
+import type { IdService, Service, ServiceType } from './types/servicesType';
 
 // eslint-disable-next-line import/prefer-default-export
 export const loadServicesFetch = async (): Promise<Service[]> => {
   const response: AxiosResponse<ServiceType> = await axios.get(`/api/service/admin/services`);
+  // console.log(response.data, '0-0-0-0-0');
+  return response.data.services;
+};
+
+export const delServicesFetch = async (id: IdService): Promise<IdService> => {
+  const response: AxiosResponse<IdService> = await axios.delete(
+    `/api/service/admin/delServices/${id}`,
+  );
   console.log(response.data, '0-0-0-0-0');
   return response.data;
 };

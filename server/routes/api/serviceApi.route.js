@@ -10,10 +10,10 @@ router.get("/user/services", async (req, res) => {
 
 router.get("/admin/services", async (req, res) => {
   const services = await Service.findAll();
-  res.json(services);
+  res.json({ services });
 });
 
-router.post("/admin/services", async (req, res) => {
+router.post("/admin/newServices", async (req, res) => {
   try {
     const { title, description, price } = req.body;
     if (title && description && price) {
@@ -31,7 +31,7 @@ router.delete("/admin/delServices/:id", async (req, res) => {
     const { id } = req.params;
     const result = await Service.destroy({ where: { id } });
     if (result) {
-      res.json({ message: "ok" });
+      res.json({ id: +id });
     }
   } catch ({ message }) {
     res.json({ message });
