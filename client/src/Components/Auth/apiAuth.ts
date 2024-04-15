@@ -20,6 +20,6 @@ export const logFetch = async(obj: UserInForm): Promise<User> => {
 }
 
 export const logOutFetch = async (): Promise<User>  => {
-    const res: AxiosResponse<{message: string, user: User}> = await axios.get(`/api/auth/logout`)
-    return res.data.user
+    const res: AxiosResponse<{message: string, user: User}> = await axios.get(`/api/auth/logout`)   
+    return res.data
 }

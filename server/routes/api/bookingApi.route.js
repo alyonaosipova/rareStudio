@@ -1,24 +1,34 @@
 const router = require('express').Router()
 const { Sequelize } = require('sequelize')
-const {Booking} = require('../../db/models/booking')
-const {Service} = require('../../db/models/service')
-const {User} = require('../../db/models/user')
+const {Booking} = require('../../db/models')
+const {Service} = require('../../db/models')
+const {User} = require('../../db/models')
 
 router.get('/user/booking', async(req, res) => {
-   const bookings = await Booking.find({
-    where: {},
-    include:{
-        model:models.Service,
-        where:{
-            serviceId: Sequelize.col('Service.')
-        }
-    }
+    try{
+        const bookings = await Booking.findAll({
+            where: {},
+            include: {
+                model: Service,
+                attributes: ['title'], 
+                // where: {
+                //     serviceId: Sequelize.col('Service.id')
+                // }
+            }
    })
+   res.status(200).json({bookings})
+} catch({message}){
+    res.json(message)
+   }
 })
-Catalog.find({
-    where: { id: itemId },
-    include: {
-        model: models.ProductCategory,
-        where: { language_id: Sequelize.col('Catalog.language_id') }
-    }
-});
+
+router.get('/admin/booking', async(req, res) => {
+
+})
+
+router.put('/admin/booking/:id', async(req, res) =>{
+
+})
+
+
+module.exports = router

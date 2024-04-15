@@ -3,6 +3,8 @@ const bcrypt = require("bcrypt");
 const { generateTokens } = require("../../utils/authUtils");
 const cookiesConfig = require("../../config/cookiesConfig");
 const {User} = require('../../db/models')
+const {jwtConfig} = require('../../config/jwtConfig');
+const { verifyAccessToken } = require("../../middleware/verifyToken");
 
 router.post('/sign-up', async(req,res) =>{
     let user;
@@ -92,8 +94,12 @@ router.post('/sign-in', async (req, res) => {
   });
 
   router.get('/logout', (req, res) => {
-    res.clearCookie(configJWT.access.type).clearCookie(configJWT.refresh.type);
+    try{
+    res.clearCookie(jwtConfig.access.type).clearCookie(jwtConfig.refresh.type);
     res.json({ message: 'success' });
+    } catch({message}){
+        res.json({message})
+    }
   });
   
 

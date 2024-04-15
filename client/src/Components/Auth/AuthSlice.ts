@@ -55,11 +55,11 @@ const userSlice = createSlice({
               })
               .addCase(authLogout.fulfilled, (state) => {
                 state.user = undefined
-                state.message = ''
+                // state.message = ''
               })
-              .addCase(authLogout.rejected, (state, action) => {
-                state.message = action.error.message
-              })
+            //   .addCase(authLogout.rejected, (state, action) => {
+            //     state.message = action.error.message
+            //   })
     },
 });
 
