@@ -43,5 +43,5 @@ function RegistrationPage(): JSX.Element {
       </main>
     );
 }
-
+ 
 export default RegistrationPage;
