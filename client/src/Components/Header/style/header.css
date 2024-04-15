@@ -1,0 +1,52 @@
+.header{
+    background-image: url('https://s3-alpha-sig.figma.com/img/6f5c/a670/047b654d66059a63ed30708bddbb17c1?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=SsYqR8cd8gHmXD~d1GCP6ibvf2f6YcRQw1pmontxB5bdW2hD1GPPKt71ZBIyZakgi9Pz~ARKwsgTdliXMq04ZH5erUoJkWls8IpbHAdRCo1bz3~-SKaAnHjbHIbi~j6IvSzjBrV~9rbapPeUjSoh4U-krj8O3p6EnnWho5umDSLAq~-ijfm3BJ4X2zlHuRmyyznQgw1h1nURYUxr3YATHyzgfFcG4QSe78BiAhSmVtBpnWoUmW3gq0rW1zOYGSI3xYbFOlZKLn2-I21Sp4~TpTT3sch0T1qnvkpoJ334CjFAG~86vCaSmjt-U5~UsdDd917kb50lw~VQJ8kvWwsYoQ__');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.logo{
+width: 861px;
+height: 487px;
+top: 127px;
+margin-right: 1300px;
+
+}
+
+.location{
+    width: 49px;
+height: 52px;
+top: 734px;
+left: 63px;
+gap: 0px;
+opacity: 0px;
+}
+
+.address{
+    display: flex;
+    flex-direction: row;
+    margin-left: 70px;
+    margin-bottom: 20px;
+}
+
+.vklogo{
+    width: 65px;
+height: 68px;
+top: 828px;
+left: 257px;
+gap: 0px;
+opacity: 0px;
+}
+
+.tglogo{
+    height: 65px;
+    width: 110px;
+}
+
+.logos{
+    margin-right: 1190px;
+}
+
+.studio{
+    margin-right: 860px;
+
+}
