@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 import Carousel from './Carousel';
+import Header from '../Header/Header';
 
 function MainPage(): JSX.Element {
   return (
     <>
-      <div>logo</div>
-      <div>студия звукозаписи</div>
-      <div>Rare Studio (м. Площадь Восстания) [spb]</div>
+      <Header/>
       <button type="button">Забронировать время</button>
 
       <Carousel />

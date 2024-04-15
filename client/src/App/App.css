@@ -1,12 +1,12 @@
 #root {
   /* max-width: 1280px; */
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
 }
 
 .App.dark {
-  background-color: #242424;
+  background-color: #000000;
   color: rgb(231, 221, 223);
 }
 

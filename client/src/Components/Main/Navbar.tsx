@@ -22,14 +22,14 @@ function Navbar({ theme, toggleTheme }: { theme: string; toggleTheme: () => void
         <Link className="navbar-link" to="/">
           Main
         </Link>
-        {user && <div>Привет, {user?.name}</div>}
+        {user && <div className="navbar-link">Привет, {user?.name}</div>}
        { !user && <> <Link className="navbar-link" to="/registration">
           Registration
         </Link>
         <Link className="navbar-link" to="/login">
           Autarization
         </Link> </>}
-        <Link to= '/'onClick={() => logout()}>
+        <Link className="navbar-link" to= '/'onClick={() => logout()}>
             <div>Logout</div>
         </Link>
         <button className={` switchBtn ${theme}`} type="button" onClick={toggleTheme}>
