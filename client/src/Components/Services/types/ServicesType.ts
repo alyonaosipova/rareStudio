@@ -8,4 +8,5 @@ export type Service = {
 
 export type ServiceType = {
   services: Service[];
+  message: string | undefined;
 };
