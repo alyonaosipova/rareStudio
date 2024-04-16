@@ -2,6 +2,7 @@ import React, { FormEvent, FormEventHandler, useState } from 'react';
 import { useAppDispatch } from '../../redux/store';
 import { delService, updService } from './serviceSlice';
 import type { Service } from './types/ServicesType';
+import './styles/Service.css'
 
 function ServiceCard({ service }: { service: Service }): JSX.Element {
   const [form, setForm] = useState({
@@ -26,21 +27,22 @@ function ServiceCard({ service }: { service: Service }): JSX.Element {
   return (
     <div className="serviceCard" data-id={service.id}>
       {states ? (
-        <>
+        <div className='one_card_div' >
+          <div className='cart_text'>
+          <div className='card_price' >
+          <h3>от {service.price} р</h3>
+          </div>
+            <div className='card_title_discription'>
           <h3>{service.title}</h3>
           <p>{service.description}</p>
-          <p>{service.price}</p>
-          <div className="buttonService">
-            <button className="deleteService" type="button" onClick={deleteService}>
-              delete
-              <img className="icons" src="..." alt="..." />
-            </button>
-            <button onClick={() => setState(false)} type="button">
-              update
-              {/* <img className="icons" src="/img/update.gif" alt="..." /> */}
-            </button>
           </div>
-        </>
+          </div>
+          <div className="buttonService">
+            <img className="icons" src="refresh.png" alt="..." onClick={() => setState(false)}/>
+              <img className="icons" src="xxxxx.png" alt="..." onClick={deleteService}/>
+            <button type='button' className='go_on'>ЗАПИСАТЬСЯ</button>
+              </div>
+          </div>
       ) : (
         <form onSubmit={(e: FormEvent<HTMLFormElement>) => updateService(e, service.id)}>
           <nav className="no-space">
@@ -49,7 +51,7 @@ function ServiceCard({ service }: { service: Service }): JSX.Element {
                 type="text"
                 value={form.title}
                 onChange={(e) => setForm({ ...form, title: e.target.value })}
-              />
+                />
               <label>title</label>
             </div>
           </nav>
@@ -59,7 +61,7 @@ function ServiceCard({ service }: { service: Service }): JSX.Element {
                 type="text"
                 value={form.description}
                 onChange={(e) => setForm({ ...form, description: e.target.value })}
-              />
+                />
               <label>description</label>
             </div>
           </nav>
@@ -69,7 +71,7 @@ function ServiceCard({ service }: { service: Service }): JSX.Element {
                 type="text"
                 value={form.price}
                 onChange={(e) => setForm({ ...form, price: e.target.value })}
-              />
+                />
               <label>price</label>
             </div>
           </nav>
