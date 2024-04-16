@@ -54,7 +54,7 @@ router.put("/admin/services/:id/", async (req, res) => {
         { title, description, price, categoriesId: 1 },
         { where: { id } }
       );
-      if (result.length > 0) {
+      if (result[0] > 0) {
         const service = await Service.findOne({ where: { id } });
         res.json({ service });
       } else {

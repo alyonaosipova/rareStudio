@@ -54,7 +54,6 @@ const serviceSlice = createSlice({
       })
       .addCase(updService.fulfilled, (state, action) => {
         const updatedService = action.payload;
-        console.log(action.payload);
 
         const index = state.services.findIndex((service) => service.id === updatedService.id);
         if (index !== -1) {

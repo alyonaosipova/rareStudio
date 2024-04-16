@@ -1,4 +1,29 @@
-.navlogo{
-    width: 160px;
-    height: 60px;
+.navlogo {
+  width: 160px;
+  height: 60px;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  background-color: #000000;
+  padding: 10px 20px;
+  height: 80px; /* Установите желаемую высоту навбара */
+  border-bottom: 1px solid white;
+}
+
+.navbar {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end; /* Это выравнивает все ссылки справа */
+}
+
+.navlogo {
+  margin-right: auto; /* Это выравнивает логотип слева */
+}
+
+.navbar-link {
+  color: #fff;
+  margin-left: 20px; /* Расстояние между ссылками */
+  text-decoration: none;
 }
