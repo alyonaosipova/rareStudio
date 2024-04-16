@@ -27,7 +27,9 @@ function Navbar({ theme, toggleTheme }: { theme: string; toggleTheme: () => void
         </Link>
         <Link className="navbar-link" to="/services">
           Services
-
+        </Link>
+        <Link className="navbar-link" to="/info">
+          Information
         </Link>
         {user && <div className="navbar-link">Привет, {user?.name}</div>}
        { !user && <> <Link className="navbar-link" to="/registration">
