@@ -51,8 +51,8 @@ router.put("/admin/services/:id/", async (req, res) => {
 
     if (title && description && price) {
       const result = Service.update(
-        { title, description, price },
-        { where: {} }
+        { title, description, price, categoriesId: 1 },
+        { where: { id } }
       );
       res.json({ result });
     } else {

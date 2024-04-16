@@ -13,9 +13,13 @@ export const loadServices = createAsyncThunk('services/load', () => api.loadServ
 export const delService = createAsyncThunk('services/delete', (id: IdService) =>
   api.delServicesFetch(+id),
 );
-// export const authRegistration = createAsyncThunk('user/signup', (obj:UserUpForm)=> api.signUpFetch(obj))
+
 export const addService = createAsyncThunk('services/add', (service: ServiceAddForm) =>
   api.addServicesFetch(service),
+);
+
+export const updService = createAsyncThunk('services/upd', (service: Service) =>
+  api.updServicesFetch(service),
 );
 
 const serviceSlice = createSlice({

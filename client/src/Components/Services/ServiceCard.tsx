@@ -8,6 +8,11 @@ function ServiceCard({ service }: { service: Service }): JSX.Element {
   const deleteService = (): void => {
     dispatch(delService(service.id)).catch(console.log);
   };
+
+  const updateService = (): void => {
+    dispatch(updService(service.id)).catch(console.log);
+  };
+
   return (
     <div className="serviceCard" data-id={service.id}>
       <h3>{service.title}</h3>
@@ -18,7 +23,7 @@ function ServiceCard({ service }: { service: Service }): JSX.Element {
           delete
           <img className="icons" src="..." alt="..." />
         </button>
-        <button type="button">
+        <button type="button" onClick={updateService}>
           update
           {/* <img className="icons" src="/img/update.gif" alt="..." /> */}
         </button>

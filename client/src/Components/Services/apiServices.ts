@@ -24,7 +24,12 @@ export const addServicesFetch = async (obj: ServiceAddForm): Promise<Service> =>
 
   return response.data.service;
 };
-// export const logFetch = async (obj: UserInForm): Promise<User> => {
-//   const res: AxiosResponse<{ message: string; user: User }> = await axios.post(`/api/sign/in`, obj);
-//   return res.data.user;
-// };
+
+export const updServicesFetch = async (id: number, obj: Service): Promise<Service> => {
+  const response: AxiosResponse<{ message: string; service: Service }> = await axios.put(
+    `/api/service//admin/services/${id}`,
+    obj,
+  );
+
+  return response.data.service;
+};
