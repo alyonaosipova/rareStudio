@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../redux/store';
 import { authRegistration } from './AuthSlice';
+// import './styles/Rega.css'
 
 function RegistrationPage(): JSX.Element {
   const navigate = useNavigate();

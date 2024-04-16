@@ -1,0 +1,53 @@
+.first_word{
+    font-size: 70px;
+    margin-right: 1400px;
+}
+
+.name_of_think{
+    font-size: 40px;
+}
+
+.think_line{
+    border: 1px solid white;
+    height: 0,5px;
+    width: 740px;
+}
+
+.info{
+    display: flex;
+}
+
+.right_info{
+    margin-left: 230px;
+}
+
+.left_info{
+    margin-left: 100px;
+}
+
+.about_us_img{
+    width: 754px;
+    height: 1132px;
+}
+
+.o_nas{
+    font-size: 60px;
+}
+
+.about_us{
+    display: flex;
+}
+
+.text_about_us{
+    width: 700px;
+    margin-right: 500px;
+    margin-left: 50px;
+}
+
+.big_text{
+    text-align: left;
+}
+
+.o_nas{
+    text-align: left;
+}
