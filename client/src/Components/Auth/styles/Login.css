@@ -1,0 +1,46 @@
+.logaheader{
+    background-image: url('https://s3-alpha-sig.figma.com/img/a5d0/17b3/629cdb35e90cca435e5385ef6a8920a8?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WcnD8LMhzBBF26dBs-X6zTGtXIx4b-am9BpajcCResOuPPXurFikl4SPdszIYoRmONyAouTI0nsw9oCLH~94eAEIwzWI-FrAjmi9KiUNaNZCJa3KlK25m8aW4xqqM~~N3BPpk2A041PHtk-KwRqBw5Q7T5LDoPYk1VsYyKCzqNSzCL9OZWQmuonLvFIpoP45c8cpEhU5wWTXo0m7p04eNck52Am1uP-849r4QaItkdXYehj7Vv74VmFInxrrOt61VSpyvSbCMYqYGX8z1sav5NayGlQO1hYMfXKjt4J1fCXf51jZe171idBckSBKgWwzeHNVfJJp7IJ~OgUtBxxROw__');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 700px;
+    display: grid;
+    place-items: center;
+}
+
+.h{
+    margin: 0;
+    justify-self: center;
+}
+
+.email{
+    border: none;
+    background: transparent;
+    outline: none;
+    border-bottom: 1px solid white;
+    width: 1200px;
+    height: 100px;
+    font-size: 30px;
+    margin-bottom: 50px;
+    caret-color: white;
+    color: white;
+}
+
+.password{
+    border: none;
+    background: transparent;
+    outline: none;
+    border-bottom: 1px solid white;
+    width: 1200px;
+    height: 100px;
+    font-size: 30px;
+    margin-bottom: 50px;
+    caret-color: white;
+    color: white;
+}
+
+.signin{
+    width: 1200px;
+    height: 70px;
+    font-size: 30px;
+    margin-bottom: 70px;
+}

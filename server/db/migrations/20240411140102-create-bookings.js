@@ -1,53 +1,57 @@
-'use strict';
+"use strict";
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Bookings', {
+    await queryInterface.createTable("Bookings", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       userId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        references:{
-          model:'Users',
-          key:'id'
-        }
+        references: {
+          model: "Users",
+          key: "id",
+        },
+        onDelete: "Cascade",
+        onUpdate: "CASCADE",
       },
       serviceId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        references:{
-          model:'Services',
-          key:'id'
-        }
+        references: {
+          model: "Services",
+          key: "id",
+        },
+        onDelete: "Cascade",
+        onUpdate: "CASCADE",
       },
       startDate: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       status: {
         allowNull: false,
         type: Sequelize.ENUM({
-          values: ['confirmed', 'pending', 'rejected', 'completed']
+          values: ["confirmed", "pending", "rejected", "completed"],
         }),
-        defaultValue:'pending'
+        defaultValue: "pending",
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Bookings');
-  }
+    await queryInterface.dropTable("Bookings");
+  },
 };
 //

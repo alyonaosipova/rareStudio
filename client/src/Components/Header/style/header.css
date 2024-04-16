@@ -31,10 +31,7 @@ opacity: 0px;
 .vklogo{
     width: 65px;
 height: 68px;
-top: 828px;
-left: 257px;
-gap: 0px;
-opacity: 0px;
+
 }
 
 .tglogo{
@@ -43,10 +40,11 @@ opacity: 0px;
 }
 
 .logos{
-    margin-right: 1190px;
+    margin-right: 1500px;
 }
 
 .studio{
-    margin-right: 860px;
+    margin-right: 1350px;
 
 }
+
