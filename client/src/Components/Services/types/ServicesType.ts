@@ -11,4 +11,11 @@ export type ServiceType = {
   message: string | undefined;
 };
 
-export type IdService = Service['id'];
+export type IdService = { id: number };
+
+export type ServiceAddForm = {
+  title: string;
+  description: string;
+  price: string;
+  // userId: number;
+};

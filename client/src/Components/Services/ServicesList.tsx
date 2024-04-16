@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../redux/store';
 import ServiceCard from './ServiceCard';
 import { loadServices } from './serviceSlice';
+import ServiceAdd from './ServiceAdd';
 
 function ServicesList(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -17,12 +18,10 @@ function ServicesList(): JSX.Element {
   return (
     <div>
       <h1>УСЛУГИ RARE STUDIO</h1>
-      {/* <ServiceAdd  /> */}
+      <ServiceAdd />
       <div className="list">
         SERVICES
-        {services.map((service) => (
-          <ServiceCard service={service} key={service.id} />
-        ))}
+        {services && services.map((service) => <ServiceCard service={service} key={service.id} />)}
       </div>
     </div>
   );

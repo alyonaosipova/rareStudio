@@ -6,8 +6,6 @@ import Header from '../Header/Header';
 function MainPage(): JSX.Element {
   return (
     <>
-
-    
       <Header />
 
       <button type="button">Забронировать время</button>
@@ -17,11 +15,11 @@ function MainPage(): JSX.Element {
       <br />
       <br />
 
-      <ReactAudioPlayer src="08. OG Buda feat. LIL KRYSTALLL - Тупой.mp3" autoPlay controls />
+      <ReactAudioPlayer src="OG Buda feat. LIL KRYSTALLL - Тупой.mp3" autoPlay={false} controls />
       <br />
-      <ReactAudioPlayer src="08. OG Buda feat. LIL KRYSTALLL - Тупой.mp3" autoPlay controls />
+      <ReactAudioPlayer src="OG Buda feat. LIL KRYSTALLL - Тупой.mp3" autoPlay={false} controls />
       <br />
-      <ReactAudioPlayer src="08. OG Buda feat. LIL KRYSTALLL - Тупой.mp3" autoPlay controls />
+      <ReactAudioPlayer src="OG Buda feat. LIL KRYSTALLL - Тупой.mp3" autoPlay={false} controls />
       <br />
       <br />
 
