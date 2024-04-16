@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../redux/store';
 import ServiceCard from './ServiceCard';
 import { loadServices } from './serviceSlice';
+import Header from '../Header/Header';
 
 function ServicesList(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -16,6 +17,7 @@ function ServicesList(): JSX.Element {
 
   return (
     <div>
+      <Header/>
       <h1>УСЛУГИ RARE STUDIO</h1>
       {/* <ServiceAdd  /> */}
       <div className="list">
