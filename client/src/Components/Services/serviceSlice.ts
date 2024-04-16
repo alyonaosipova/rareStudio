@@ -1,7 +1,7 @@
 // tasks/tasksSlice.ts
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import * as api from './apiServices';
-import type { IdService, Service, ServiceType } from './types/servicesType';
+import type { IdService, Service, ServiceAddForm, ServiceType } from './types/servicesType';
 
 const initialState: ServiceType = {
   services: [],
@@ -11,11 +11,12 @@ const initialState: ServiceType = {
 export const loadServices = createAsyncThunk('services/load', () => api.loadServicesFetch());
 
 export const delService = createAsyncThunk('services/delete', (id: IdService) =>
-  api.delServicesFetch(id),
+  api.delServicesFetch(+id),
 );
-// export const addTasks = createAsyncThunk('services/addServices', (service: Service) =>
-//   api.loadServicesFetch(service),
-// );
+// export const authRegistration = createAsyncThunk('user/signup', (obj:UserUpForm)=> api.signUpFetch(obj))
+export const addService = createAsyncThunk('services/add', (service: ServiceAddForm) =>
+  api.addServicesFetch(service),
+);
 
 const serviceSlice = createSlice({
   name: 'services',
@@ -33,9 +34,19 @@ const serviceSlice = createSlice({
         state.message = action.error.message;
       })
       .addCase(delService.fulfilled, (state, action) => {
-        state.services = state.services.filter((el) => el.id !== action.payload);
+        state.services = state.services.filter((el) => el.id !== action.payload.id);
       })
       .addCase(delService.rejected, (state, action) => {
+        state.message = action.error.message;
+      })
+      .addCase(addService.fulfilled, (state, action) => {
+        // здесь можно мутировать state
+        // RTK создаст копию state автоматически
+        console.log('addService', action.payload);
+        state.services.push(action.payload);
+      })
+      .addCase(addService.rejected, (state, action) => {
+        // показываем как меняется state если загрузка не прошла
         state.message = action.error.message;
       });
   },
