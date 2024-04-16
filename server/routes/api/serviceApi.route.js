@@ -50,11 +50,16 @@ router.put("/admin/services/:id/", async (req, res) => {
     const { title, description, price } = req.body;
 
     if (title && description && price) {
-      const result = Service.update(
+      const result = await Service.update(
         { title, description, price, categoriesId: 1 },
         { where: { id } }
       );
-      res.json({ result });
+      if (result.length > 0) {
+        const service = await Service.findOne({ where: { id } });
+        res.json({ service });
+      } else {
+        res.json({ message: "Not update" });
+      }
     } else {
       res.status(400).json({ message: "Поля не заполнены" });
     }
