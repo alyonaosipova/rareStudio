@@ -15,10 +15,16 @@ router.get("/admin/services", async (req, res) => {
 
 router.post("/admin/newServices", async (req, res) => {
   try {
-    const { title, description, price } = req.body;
-    if (title && description && price) {
-      const newService = await Service.create({ title, description, price });
-      res.json({ message: "ok", newService });
+    const { title, description, price, userId } = req.body;
+    if (title && description && price && userId) {
+      const newService = await Service.create({
+        title,
+        description,
+        price,
+        userId,
+        categoriesId: 1, // TODO delete
+      });
+      res.json({ message: "ok", service: newService });
     } else {
       res.status(400).json({ message: "азполните все поля" });
     }
