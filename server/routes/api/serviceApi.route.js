@@ -45,6 +45,7 @@ router.delete("/admin/delServices/:id", async (req, res) => {
 });
 
 
+
 router.put("/admin/services/:id", async (req, res) => {
     try {
       const { id } = req.params;
@@ -61,6 +62,7 @@ router.put("/admin/services/:id", async (req, res) => {
         } else {
           res.json({ message: "Not update" });
         }
+
       } else {
         res.status(400).json({ message: "Поля не заполнены" });
       }
@@ -69,5 +71,7 @@ router.put("/admin/services/:id", async (req, res) => {
 
     }
   });
+
+
 
 module.exports = router;
