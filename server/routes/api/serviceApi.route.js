@@ -8,19 +8,21 @@ router.get('/user/services', async (req, res) => {
     res.json({services})
 })
 
+
+
 router.get('/admin/services', async (req, res) => {
     const services = await Service.findAll()
     res.json({services})
 })
 
-router.post('/admin/services', async (req, res) => {
+router.post('/admin/newServices', async (req, res) => {
     try{
         const{title, description, price} = req.body;
         if(title && description && price) {
             const newService = await Service.create({title, description,price});
             res.json({message:'ok', newService})
         } else {
-            res.status(400).json({message:'азполните все поля'});
+            res.status(400).json({message:'заполните все поля'});
         }
     } catch({message}){
         res.json({message})
@@ -44,7 +46,7 @@ router.put('/admin/services/:id/', async (req, res) => {
         const{title, description, price} = req.body;
 
         if(title && description && price){
-            const result = Service.update({title, description, price}, {where: {}})
+            const result = Service.update({where:{id}},{title, description, price}, {where: {}})
             res.json({result})
         } else{
             res.status(400).json({message: 'Поля не заполнены'})
