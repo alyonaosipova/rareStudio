@@ -27,7 +27,7 @@ function ServiceAdd(): JSX.Element {
       .catch(console.log);
   }
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
     addServiceFunc().catch(console.log);
   };

@@ -8,6 +8,7 @@ import LoginPage from '../Components/Auth/LoginPage';
 import MainPage from '../Components/Main/MainPage';
 import ServicesList from '../Components/Services/ServicesList';
 import Info from '../Components/Info/Info';
+import AuthPage from '../Components/Auth/AuthPage';
 
 function App(): JSX.Element {
   const { theme, toggleTheme } = useTheme();
@@ -16,8 +17,8 @@ function App(): JSX.Element {
       <Routes>
         <Route path="/" element={<Main toggleTheme={toggleTheme} theme={theme} />}>
           <Route index element={<MainPage />} />
-          <Route path="registration" element={<RegistrationPage />} />
-          <Route path="login" element={<LoginPage />} />
+          <Route path="authorization" element={<AuthPage />} />
+
           <Route path="services" element={<ServicesList />} />
           <Route path="info" element={<Info />} />
         </Route>
