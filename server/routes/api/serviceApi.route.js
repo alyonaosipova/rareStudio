@@ -44,6 +44,7 @@ router.delete("/admin/delServices/:id", async (req, res) => {
   }
 });
 
+
 router.put("/admin/services/:id", async (req, res) => {
     try {
       const { id } = req.params;
@@ -65,6 +66,7 @@ router.put("/admin/services/:id", async (req, res) => {
       }
     } catch ({ message }) {
       res.json({ message });
+
     }
   });
 

@@ -46,11 +46,22 @@ const serviceSlice = createSlice({
       .addCase(addService.fulfilled, (state, action) => {
         // здесь можно мутировать state
         // RTK создаст копию state автоматически
-        console.log('addService', action.payload);
         state.services.push(action.payload);
       })
       .addCase(addService.rejected, (state, action) => {
         // показываем как меняется state если загрузка не прошла
+        state.message = action.error.message;
+      })
+      .addCase(updService.fulfilled, (state, action) => {
+        const updatedService = action.payload;
+        console.log(action.payload);
+
+        const index = state.services.findIndex((service) => service.id === updatedService.id);
+        if (index !== -1) {
+          state.services[index] = updatedService;
+        }
+      })
+      .addCase(updService.rejected, (state, action) => {
         state.message = action.error.message;
       });
   },

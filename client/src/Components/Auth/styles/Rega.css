@@ -10,9 +10,9 @@
 .h{
     margin: 0;
     justify-self: center;
-}
+} 
 
-.email{
+ .email{
     border: none;
     background: transparent;
     outline: none;
@@ -30,4 +30,10 @@
     height: 70px;
     font-size: 30px;
     margin-bottom: 70px;
+    background-image: none; 
+	background: transparent;
+	float: left;
+	background-color: transparent;
+    border: 2px solid white;
+    color: aliceblue;
 }
