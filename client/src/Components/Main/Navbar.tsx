@@ -8,7 +8,7 @@ import { useAppDispatch } from '../../redux/store';
 import { authLogout } from '../Auth/AuthSlice';
 import './styles/Navbar.css';
 
-function Navbar({ theme, toggleTheme }: { theme: string; toggleTheme: () => void }): JSX.Element {
+function Navbar(): JSX.Element {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const user = useSelector((store: RootState) => store.user.user);
