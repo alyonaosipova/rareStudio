@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const Carousel = () => {
+function Carousel(): JSX.Element {
   const settings = {
     dots: true,
     infinite: true,
@@ -14,30 +14,36 @@ const Carousel = () => {
   };
 
   return (
-    <Slider {...settings}>
+    <Slider
+      dots={settings.dots}
+      infinite={settings.infinite}
+      speed={settings.speed}
+      slidesToShow={settings.slidesToShow}
+      slidesToScroll={settings.slidesToScroll}
+    >
       <div>
-        <img className="carousel" src="IMG_8906.jpg" alt="Image 1" />
+        <img className="carousel" src="IMG_8906.jpg" alt="1" />
       </div>
       <div>
-        <img className="carousel" src="IMG_9073.jpg" alt="Image 2" />
+        <img className="carousel" src="IMG_9073.jpg" alt="2" />
       </div>
       <div>
-        <img className="carousel" src="IMG_9075.jpg" alt="Image 3" />
+        <img className="carousel" src="IMG_9075.jpg" alt="3" />
       </div>
       <div>
-        <img className="carousel" src="IMG_9119.jpg" alt="Image 4" />
+        <img className="carousel" src="IMG_9119.jpg" alt="4" />
       </div>
       <div>
-        <img className="carousel" src="IMG_9218.jpg" alt="Image 5" />
+        <img className="carousel" src="IMG_9218.jpg" alt="5" />
       </div>
       <div>
-        <img className="carousel" src="IMG_9294.jpg" alt="Image 6" />
+        <img className="carousel" src="IMG_9294.jpg" alt="6" />
       </div>
       <div>
-        <img className="carousel" src="IMG_9310.jpg" alt="Image 7" />
+        <img className="carousel" src="IMG_9310.jpg" alt="7" />
       </div>
     </Slider>
   );
-};
+}
 
 export default Carousel;
