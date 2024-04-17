@@ -5,11 +5,12 @@ const cookiesConfig = require("../config/cookiesConfig");
 function verifyRefreshToken(req, res, next) {
   try {
     const { refresh } = req.cookies;
-    const { user } = jwt.verify(refresh, "refresh");
+    const { user } = jwt.verify(refresh, process.env.TOKEN_R);
     const { accessToken, refreshToken } = generateTokens({
       user: { id: user.id, email: user.email, name: user.name },
     });
     res.locals.user = user;
+
     res
       .cookie(cookiesConfig.refresh, refreshToken, {
         maxAge: cookiesConfig.maxAgeRefresh,
@@ -29,8 +30,7 @@ function verifyRefreshToken(req, res, next) {
 function verifyAccessToken(req, res, next) {
   try {
     const { access } = req.cookies;
-    const { user } = jwt.verify(access, "access");
-
+    const  {user}  = jwt.verify(access, process.env.TOKEN_A);
     res.locals.user = user;
     next();
   } catch (error) {

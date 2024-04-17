@@ -10,6 +10,7 @@ export const loadServicesFetch = async (): Promise<Service[]> => {
 };
 
 export const delServicesFetch = async (id: number): Promise<IdService> => {
+  
   const response: AxiosResponse<IdService> = await axios.delete(
     `/api/service/admin/delServices/${id}`,
   );

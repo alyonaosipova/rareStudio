@@ -44,9 +44,14 @@ function Navbar(): JSX.Element {
           </>
         )}
         {user && (
+          <>
+          <Link className="navbar-link" to="/profileUser">
+            <div>profile</div>
+          </Link>
           <Link className="navbar-link" to="/" onClick={() => logout()}>
             <div>Logout</div>
           </Link>
+          </>
         )}
 
         {/* <button className={` switchBtn ${theme}`} type="button" onClick={toggleTheme}>

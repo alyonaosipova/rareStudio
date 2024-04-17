@@ -3,6 +3,7 @@ import { useDispatch, useSelector, type TypedUseSelectorHook } from 'react-redux
 import { configureStore } from '@reduxjs/toolkit';
 import userSlice from '../Components/Auth/AuthSlice';
 import serviceSlice from '../Components/Services/serviceSlice';
+import bookingSlice from '../Components/Bookings/bookingSlice';
 // Слайсы - это отдельные модули нашего приложения. У каждого слайса - свой редьюсер.
 
 const store = configureStore({
@@ -10,6 +11,7 @@ const store = configureStore({
   reducer: {
     user: userSlice,
     services: serviceSlice,
+    booking: bookingSlice
   },
 });
 

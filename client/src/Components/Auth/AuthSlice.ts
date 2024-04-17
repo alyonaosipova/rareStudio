@@ -39,6 +39,8 @@ const userSlice = createSlice({
             
                 // здесь можно мутировать state
                 // RTK создаст копию state автоматически
+                console.log(action.payload, 'slice');
+                
                 state.user = action.payload;
                 console.log(state.user);
             })
