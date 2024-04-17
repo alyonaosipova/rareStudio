@@ -22,8 +22,11 @@ router.get('/admin/allUsers', async(req, res) => {
     }
 })
 
-router.get('user/info/:id', async(req,res) => {
+router.get('/user/info/:id', async(req,res) => {
+console.log(22222);
     try{
+        const {id} = req.params
+        console.log(id);
         const userInfo = await User.findOne({where:{id}})
         res.status(200).json({message: 'success', userInfo})
     } catch({message}){
@@ -49,9 +52,4 @@ router.put('/user/upDate', upload.single('avatar'), async (req, res) =>{
         res.json({message})
     }
 })
-email: 'vlad@mail.com',
-        name: 'Vlad',
-        password: hash,
-        isAdmin: true,
-        phone:79123455623,
-        avatar:'123',
+ module.exports = router

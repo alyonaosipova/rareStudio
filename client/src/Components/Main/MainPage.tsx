@@ -1,8 +1,20 @@
-import React, { useState } from 'react';
+
+import React, { useEffect } from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 import Modal from 'react-modal';
 import Carousel from './Carousel';
 import Header from '../Header/Header';
+
+import { authCheck } from '../Auth/AuthSlice';
+import { useAppDispatch } from '../../redux/store';
+
+function MainPage(): JSX.Element {
+  const dispatch = useAppDispatch()
+
+  useEffect(()=> {
+    dispatch(authCheck())
+      },[])
+
 import VideoPlayer from './Youtube';
 import BookingTimePicker from '../Booking/Booking';
 
@@ -39,6 +51,7 @@ function MainPage(): JSX.Element {
   const closeModal = (): void => {
     setIsModalOpen(false);
   };
+
 
   return (
     <>

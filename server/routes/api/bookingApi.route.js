@@ -12,9 +12,6 @@ router.get('/user/:id/bookings', async(req, res) => {
             include: {
                 model: Service,
                 attributes: ['title'], 
-                // where: {
-                //     serviceId: Sequelize.col('Service.id')
-                // }
             }
    })
    res.status(200).json({bookings})
@@ -36,10 +33,28 @@ router.post('/user/newBooking', async(req, res) =>{
     }
 })
 
+router.delete('/user/delBooking/:id', async (req, res) =>{
+    try {
+        const {id} = req.params
+        const delBooking = await Booking.destroy({where: {id}})
+
+        if(delBooking){
+            res.json({ id: +id });
+        }
+    } catch({message}){
+        res.json({message})
+    }
+})
+
 router.get('/admin/booking', async(req, res) => {
     try{
-        const result = await Booking.findAll()
-        res.json({result})
+        const result = await Booking.findAll(
+            {include:{
+                model: Service,
+                attributes:['title']
+            }}
+        )
+        res.json({bookings: result})
     } catch ({message}){
         res.json({message})
     }

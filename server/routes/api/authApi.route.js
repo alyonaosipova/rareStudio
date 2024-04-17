@@ -8,10 +8,9 @@ const { verifyAccessToken } = require("../../middleware/verifyToken");
 
 router.post('/sign-up', async(req,res) =>{
     let user;
-    // console.log(req.body,'1');
     try {
         const{name, email, password, r_password} = req.body;
-        // console.log(req.body,'2');
+        
         if(name && email && password && r_password){
             
             const globalRegex = /^[^@]+@[^@]{2,}\.[^@]{2,}$/;
@@ -72,7 +71,7 @@ router.post('/sign-in', async (req, res) => {
             refreshToken,
             { maxAge: cookiesConfig.maxAgeRefresh, httpOnly: true },
           );
-          res.status(200).json({ message: 'ok', user: { name: user.name, id: user.id } });
+          res.status(200).json({ message: 'ok', user });
         } else {
           res.status(400).json({ message: 'логин или пароль не верный' });
         }
@@ -84,14 +83,15 @@ router.post('/sign-in', async (req, res) => {
     }
   });
 
-//   router.get('/check', async (req, res) => {
-//     if (res.locals.user) {
-//       const user = await User.findOne({ where: { id: res.locals.user.id }, attributes: { exclude: ['password'] } });
-//       res.json({ user });
-//       return;
-//     }
-//     res.json({});
-//   });
+  router.get('/check', async (req, res) => {
+ 
+    if (res.locals.user) {
+      const user = await User.findOne({ where: { id: res.locals.user.id }, attributes: { exclude: ['password'] } });
+      res.json( user);
+      return;
+    }
+    res.json({});
+  });
 
   router.get('/logout', (req, res) => {
     try{

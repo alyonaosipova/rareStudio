@@ -13,8 +13,10 @@ function ServicesList(): JSX.Element {
   const dispatch = useAppDispatch();
 
   const services = useSelector((store: RootState) => store.services.services);
-  console.log(services);
+  console.log(services,'!!!!!!');
 
+  
+  
   useEffect(() => {
     dispatch(loadServices()).catch(console.log);
   }, []);
