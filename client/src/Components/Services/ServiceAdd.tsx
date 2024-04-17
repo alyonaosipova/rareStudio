@@ -35,39 +35,41 @@ function ServiceAdd(): JSX.Element {
   return (
     <form onSubmit={handleSubmit}>
       <nav className="no-space">
-        <div className="max field label border round">
+        <div className="add_title">
           <input
+            placeholder='TITLE'
+            className='title_in'
             type="title"
             value={form.title}
             onChange={(e) => setForm({ ...form, title: e.target.value })}
           />
-          <label>title</label>
         </div>
       </nav>
       <nav className="no-space">
-        <div className="max field label border round">
+        <div className="add_description">
           <input
+          placeholder='DESCRIPTION'
+          className='title_in'
             type="description"
             value={form.description}
             onChange={(e) => setForm({ ...form, description: e.target.value })}
           />
-          <label>description</label>
         </div>
       </nav>
       <nav>
-        <div className="max field label border round">
+        <div className="add_price">
           <input
+          placeholder='PRICE'
+          className='title_in'
             type="price"
             value={form.price}
             onChange={(e) => setForm({ ...form, price: e.target.value })}
           />
-          <label>price</label>
         </div>
       </nav>
-
       <nav>
         <button type="submit" className="max large round">
-          Add
+          добавить услугу
         </button>
       </nav>
     </form>
