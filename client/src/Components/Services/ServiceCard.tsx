@@ -45,39 +45,43 @@ function ServiceCard({ service }: { service: Service }): JSX.Element {
           </div>
       ) : (
         <form onSubmit={(e: FormEvent<HTMLFormElement>) => updateService(e, service.id)}>
+          <div className='full_form_up'>
+          <div className='update_form' >
           <nav className="no-space">
-            <div className="max field label border round">
+            <div className="card_title">
               <input
+                className='up_input'
                 type="text"
                 value={form.title}
                 onChange={(e) => setForm({ ...form, title: e.target.value })}
                 />
-              <label>title</label>
             </div>
           </nav>
           <nav className="no-space">
-            <div className="max field label border round">
+            <div className="card_description">
               <input
+              className='up_input'
                 type="text"
                 value={form.description}
                 onChange={(e) => setForm({ ...form, description: e.target.value })}
                 />
-              <label>description</label>
             </div>
           </nav>
           <nav>
-            <div className="max field label border round">
+            <div className="card_price_up">
               <input
+              className='up_input'
                 type="text"
                 value={form.price}
                 onChange={(e) => setForm({ ...form, price: e.target.value })}
                 />
-              <label>price</label>
             </div>
           </nav>
           <nav>
-            <button type="submit">save</button>
+            <button className='save_up' type="submit">save</button>
           </nav>
+          </div>
+          </div>
         </form>
       )}
     </div>
