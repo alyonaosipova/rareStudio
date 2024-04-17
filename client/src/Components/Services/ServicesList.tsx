@@ -24,9 +24,10 @@ function ServicesList(): JSX.Element {
       <Header/>
       <h1>УСЛУГИ RARE STUDIO</h1>
       <ServiceAdd />
+      <div className='cards_map' >
       <div className="list">
-        SERVICES
         {services && services.map((service) => <ServiceCard service={service} key={service.id} />)}
+      </div>
       </div>
     </div>
   );
