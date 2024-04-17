@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 import Carousel from './Carousel';
 import Header from '../Header/Header';
+import { authCheck } from '../Auth/AuthSlice';
+import { useAppDispatch } from '../../redux/store';
 
 function MainPage(): JSX.Element {
+  const dispatch = useAppDispatch()
+
+  useEffect(()=> {
+    dispatch(authCheck())
+      },[])
   return (
     <>
       <Header />

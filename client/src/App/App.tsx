@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Main from '../Components/Main/Main';
@@ -9,9 +9,16 @@ import MainPage from '../Components/Main/MainPage';
 import ServicesList from '../Components/Services/ServicesList';
 import Info from '../Components/Info/Info';
 import AuthPage from '../Components/Auth/AuthPage';
+import ProfileUser from '../Components/Profile/ProfileUser';
+import { RootState, useAppDispatch } from '../redux/store';
+import { useSelector } from 'react-redux';
+import { checkFetch } from '../Components/Auth/apiAuth';
+import { authCheck } from '../Components/Auth/AuthSlice';
 
 function App(): JSX.Element {
   const { theme, toggleTheme } = useTheme();
+  const user = useSelector((store: RootState)=> store.user.user)
+ 
   return (
     <div className={`App ${theme}`}>
       <Routes>
@@ -21,6 +28,7 @@ function App(): JSX.Element {
 
           <Route path="services" element={<ServicesList />} />
           <Route path="info" element={<Info />} />
+          <Route path='profileUser' element={<ProfileUser/>}/>
         </Route>
       </Routes>
     </div>
