@@ -34,6 +34,9 @@ function Navbar(): JSX.Element {
         <Link className="navbar-link" to="/info">
           Information
         </Link>
+        <Link className="navbar-link" to="/contacts">
+          <div>Contacts</div>
+        </Link>
         {user && <div className="navbar-link">Привет, {user?.name}</div>}
         {!user && (
           <>
@@ -45,12 +48,12 @@ function Navbar(): JSX.Element {
         )}
         {user && (
           <>
-          <Link className="navbar-link" to="/profileUser">
-            <div>profile</div>
-          </Link>
-          <Link className="navbar-link" to="/" onClick={() => logout()}>
-            <div>Logout</div>
-          </Link>
+            <Link className="navbar-link" to="/profileUser">
+              <div>profile</div>
+            </Link>
+            <Link className="navbar-link" to="/" onClick={() => logout()}>
+              <div>Logout</div>
+            </Link>
           </>
         )}
 
