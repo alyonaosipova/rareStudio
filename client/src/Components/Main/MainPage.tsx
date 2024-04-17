@@ -1,66 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactAudioPlayer from 'react-audio-player';
-import Modal from 'react-modal';
 import Carousel from './Carousel';
 import Header from '../Header/Header';
 import VideoPlayer from './Youtube';
-import BookingTimePicker from '../Booking/Booking';
-
-const modalStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-  },
-  overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Прозрачный цвет фона
-    zIndex: 1000, // Поверх всех элементов
-    display: 'flex',
-    // justifyContent: 'center',
-    // alignItems: 'center',
-  },
-};
+import ModalWindow from '../Booking/ModalWindow';
 
 function MainPage(): JSX.Element {
-  const [selectedTime, setSelectedTime] = useState<Date | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleTimeChange = (time: Date): void => {
-    setSelectedTime(time);
-  };
-
-  const openModal = (): void => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = (): void => {
-    setIsModalOpen(false);
-  };
-
   return (
     <>
       <Header />
-      <button type="button" onClick={openModal}>
-        Забронировать время
-      </button>
-
-      <Modal
-        isOpen={isModalOpen}
-        onRequestClose={closeModal}
-        style={modalStyles}
-        contentLabel="Booking Time Modal"
-        shouldCloseOnOverlayClick
-      >
-        <div className="insideModal">
-          <BookingTimePicker selectedDate={selectedTime} onTimeChange={handleTimeChange} />
-          <button type="button" style={{ margin: '20px auto', display: 'block' }}>
-            Выбрать
-          </button>
-        </div>
-      </Modal>
+      <ModalWindow />
       <Carousel />
       <br />
       <br />

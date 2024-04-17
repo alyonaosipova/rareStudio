@@ -1,75 +1,73 @@
-.line{
-    width: 2000px;
-    height: 1px;
-    border: 1px solid white;
-    margin-top: 40px;
+.line {
+  width: 2000px;
+  height: 1px;
+  border: 1px solid white;
+  margin-top: 40px;
 }
 
-.footerlogo{
-width: 767px;
-height: 407px;
-top: 3993px;
+.footerlogo {
+  width: 767px;
+  height: 407px;
+  top: 3993px;
 }
 
-.number{
-    margin-bottom: 10px;
-    font-size: 40px;
+.number {
+  margin-bottom: 10px;
+  font-size: 40px;
 }
 
-.text{
-    margin-bottom: 10px;
-    font-size: 50px;
-
+.text {
+  margin-bottom: 10px;
+  font-size: 50px;
 }
 
-.footer{
-    display: flex;
-    font-size: 120px;
+.footer {
+  display: flex;
+  font-size: 120px;
 }
 
-.png{
-    width: 67px;
-height: 70px;
-
+.png {
+  width: 67px;
+  height: 70px;
 }
 
-.location_footer{
-    font-size: 20px;
+.location_footer {
+  font-size: 20px;
 }
 
-.address_footer{
-    display: flex;
-    margin-left: 80px;
-    /* flex-direction: row; */
-    /* width: 1000px; */
+.address_footer {
+  display: flex;
+  margin-left: 80px;
+  /* flex-direction: row; */
+  /* width: 1000px; */
 }
 
-.mail{
-    font-size: 40px;
+.mail {
+  font-size: 40px;
 }
 
-.but{
- font-size: 40px;
- width: 500px;
- border: medium none;
-	background-image: none; 
-	background: transparent;
-	float: left;
-	background-color: transparent;
-    border: 2px solid white;
-    color: aliceblue;
+.but {
+  font-size: 40px;
+  width: 500px;
+  border: medium none;
+  background-image: none;
+  background: transparent;
+  float: left;
+  background-color: transparent;
+  border: 2px solid white;
+  color: aliceblue;
 }
 
-.textcont{
-    font-size: 100px;
+.textcont {
+  font-size: 100px;
 }
 
-.left{
-    display: flex;
-    flex-direction: column;
-    margin-left: 370px;
+.left {
+  display: flex;
+  flex-direction: column;
+  margin-left: 370px;
 }
 
-.but_log{
-    display: flex;
+.but_log {
+  display: flex;
 }
