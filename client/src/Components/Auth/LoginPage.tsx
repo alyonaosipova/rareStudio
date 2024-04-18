@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/button-has-type */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { RootState, useAppDispatch } from '../../redux/store';
@@ -16,10 +16,17 @@ function SignInForm(): JSX.Element {
   });
   const dispatch = useAppDispatch();
   const user = useSelector((store: RootState) => store.user.user);
+  let message = useSelector((store: RootState) => store.user.message);
+
+  useEffect(() => {
+    if (user !== undefined) {
+      navigate('/');
+    }
+  }, [user]);
 
   async function getUser(): Promise<void> {
     dispatch(authLogin({ ...form })).catch(console.log);
-    navigate('/');
+    message = '';
   }
 
   return (
@@ -46,6 +53,7 @@ function SignInForm(): JSX.Element {
             onChange={(e) => setForm({ ...form, password: e.target.value })}
           />
         </div>
+        <div className="incorMess">{message}</div>
         <button type="button" className="signin" onClick={() => getUser(user)}>
           Войти
         </button>
