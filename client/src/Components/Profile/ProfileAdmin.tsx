@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import BookingAdmin from '../Bookings/BookingsAdmin';
 
-function ProfileAdmin ():JSX.Element{
-    return(
-        <div>ADMIN</div>
-    )
+function ProfileAdmin(): JSX.Element {
+  return (
+    <>
+      <div>ADMIN</div>
+      <BookingAdmin />
+    </>
+  );
 }
 
-export default ProfileAdmin
+export default ProfileAdmin;

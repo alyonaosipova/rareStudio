@@ -26,7 +26,7 @@ const userSlice = createSlice({
         // здесь можно мутировать state
         // RTK создаст копию state автоматически
         state.user = action.payload;
-        console.log(state.user);
+        // console.log(state.user);
       })
       .addCase(authRegistration.rejected, (state, action) => {
         // показываем как меняется state если загрузка не прошла
@@ -35,7 +35,7 @@ const userSlice = createSlice({
       .addCase(authCheck.fulfilled, (state, action) => {
         // здесь можно мутировать state
         // RTK создаст копию state автоматически
-        console.log(action.payload, 'slice');
+        // console.log(action.payload, 'slice');
 
         state.user = action.payload;
       })

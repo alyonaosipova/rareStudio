@@ -18,15 +18,16 @@
 }
 
 .text {
-  margin-bottom: 10px;
+  margin-bottom: 50px;
   font-size: 50px;
 }
 
 .logoss {
-  margin-top: -10px;
+  margin-top: 10px;
 }
 
 .footer {
+  margin-top: 20px;
   display: flex;
   font-size: 120px;
 }
@@ -67,22 +68,22 @@ p.text {
   background-color: transparent !important;
   /* border: 2px solid white !important; */
   color: rgb(255, 255, 255) !important;
-  margin-left: 40px;
+  /* margin-left: 40px; */
 }
 
 .textcont {
   font-size: 80px;
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 .right {
-  margin-right: -100px;
+  margin-bottom: 50px;
 }
 
 .left {
   display: flex;
   flex-direction: column;
-  margin-left: 370px;
+  /* margin-right: 500px; */
 }
 
 .but_log {

@@ -13,7 +13,7 @@ export const signUpFetch = async (obj: UserUpForm): Promise<User> => {
 
 export const checkFetch = async (): Promise<User> => {
   const res: AxiosResponse<{ message: string; user: User }> = await axios.get(`/api/auth/check`);
-  console.log(res.data.user, 'api');
+  //   console.log(res.data.user, 'api');
   return res.data.user;
 };
 

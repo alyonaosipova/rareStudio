@@ -11,6 +11,11 @@ router.post("/sign-up", async (req, res) => {
   try {
     const { name, email, password, r_password } = req.body;
 
+    if (password !== r_password) {
+      res.status(401).json({ message: "пвроли не совпадают" });
+      return;
+    }
+
     if (name && email && password && r_password) {
       const globalRegex = /^[^@]+@[^@]{2,}\.[^@]{2,}$/;
       if (globalRegex.test(email)) {

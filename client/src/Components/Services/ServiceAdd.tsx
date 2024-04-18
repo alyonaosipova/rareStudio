@@ -16,7 +16,7 @@ function ServiceAdd(): JSX.Element {
   });
   const dispatch = useAppDispatch();
   const user = useSelector((store: RootState) => store.user.user);
-  console.log('admin', user?.isAdmin);
+  // console.log('admin', user?.isAdmin);
 
   async function addServiceFunc(): Promise<void> {
     dispatch(addService({ ...form }))
