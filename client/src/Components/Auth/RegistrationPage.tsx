@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { RootState, useAppDispatch, useAppSelector } from '../../redux/store';
+import { RootState, useAppDispatch } from '../../redux/store';
 import { authRegistration } from './AuthSlice';
+import { useSelector } from 'react-redux';
 
 // import './styles/Rega.css'
 
@@ -14,12 +15,18 @@ function RegistrationPage(): JSX.Element {
     r_password: '',
   });
   const dispatch = useAppDispatch();
-  const message = useAppSelector((store: RootState) => store.user.message);
-  // console.log(message, 'message');
+  const user = useSelector((store: RootState) => store.user.user);
+  let message = useSelector((store: RootState) => store.user.message);
+
+  useEffect(() => {
+    if (user !== undefined) {
+      navigate('/');
+    }
+  }, [user]);
 
   async function getUser(): Promise<void> {
     dispatch(authRegistration({ ...form })).catch(console.log);
-    // navigate('/');
+    message = '';
   }
 
   return (
@@ -64,7 +71,7 @@ function RegistrationPage(): JSX.Element {
             onChange={(e) => setForm({ ...form, r_password: e.target.value })}
           />
         </div>
-        <div className="errRega err">{message}</div>
+        <div className="incorMess">{message}</div>
         <button type="button" className="signin" onClick={() => getUser(form)}>
           Регистрация
         </button>
