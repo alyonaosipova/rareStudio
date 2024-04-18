@@ -16,3 +16,8 @@
 .react-datepicker__day--keyboard-selected {
   background-color: #b4b4b4 !important;
 }
+
+.bookButton {
+  border-color: #fff;
+  border: 1px;
+}

@@ -8,7 +8,11 @@
   width: 861px;
   height: 487px;
   top: 127px;
-  margin-right: 1300px;
+  margin-left: -980px;
+}
+
+img.location {
+  margin-left: -50px;
 }
 
 .location {

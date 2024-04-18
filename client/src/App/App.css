@@ -24,6 +24,15 @@ body {
 .carousel {
   height: 400px;
 }
+/* Цвет активной точки */
+.slick-dots li.slick-active button:before {
+  color: #ee5103 !important; /* Измените цвет на желаемый */
+}
+
+/* Цвет неактивных точек */
+.slick-dots li button:before {
+  color: #ffffff !important; /* Измените цвет на желаемый */
+}
 
 .photos-container {
   display: flex;
@@ -39,7 +48,7 @@ body {
 .photos:hover {
   transform: scale(1.1);
 }
-
+/* 
 .switchBtn.light {
   background-color: #242424;
 }
@@ -66,7 +75,7 @@ body {
 .btnAdd.dark {
   background-color: rgb(89, 36, 105);
   margin: 5px;
-}
+} */
 
 a {
   font-weight: 500;
