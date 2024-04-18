@@ -1,25 +1,26 @@
 export type User = {
-    id: number,
-    email: string,
-    name: string,
-    password: string,
-    createdAt: string,
-    updatedAt: string,
-}
+  id: number;
+  email: string;
+  name: string;
+  password: string;
+  isAdmin?: boolean;
+  createdAt: string;
+  updatedAt: string;
+};
 
 export type UserInForm = {
-    email: string,
-    password: string,
-}
+  email: string;
+  password: string;
+};
 
 export type UserUpForm = {
-    email: string,
-    name: string,
-    password: string,
-    r_password: string,
-}
+  email: string;
+  name: string;
+  password: string;
+  r_password: string;
+};
 
 export type UserLoad = {
-user: User | undefined,
-message: string | undefined
-}
+  user: User | undefined;
+  message: string | undefined;
+};

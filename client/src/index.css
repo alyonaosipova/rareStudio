@@ -17,6 +17,20 @@
 body {
   margin: 0;
 }
+.go_on {
+  margin-top: 10px;
+  height: 40px;
+  width: 150px;
+  font-size: 15px;
+  border: medium none;
+  background-image: none;
+  background: transparent;
+  float: left;
+  background-color: transparent;
+  border: 2px solid white;
+  margin-left: -200px;
+  color: rgb(255, 255, 255);
+}
 
 button {
   width: 400px;
@@ -28,6 +42,22 @@ button {
   background-color: #000000;
   cursor: pointer;
   transition: border-color 0.25s;
+}
+
+.mediaContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.musicContainer,
+.VideoPlayer {
+  flex: 0.5; /* Равномерное распределение пространства между элементами */
+}
+
+.modalmain {
+  margin-top: -60px;
 }
 /* button:hover {
   border-color: #646cff;

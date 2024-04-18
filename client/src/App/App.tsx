@@ -15,21 +15,28 @@ import { useSelector } from 'react-redux';
 import { checkFetch } from '../Components/Auth/apiAuth';
 import { authCheck } from '../Components/Auth/AuthSlice';
 import Contacts from '../Components/Info/Contacts';
+import IncorrectPage from '../Components/IncorrectPage/IncorrectPage';
 
 function App(): JSX.Element {
   const { theme, toggleTheme } = useTheme();
+  const dispatch = useAppDispatch();
   const user = useSelector((store: RootState) => store.user.user);
+
+  useEffect(() => {
+    dispatch(authCheck()).catch(console.log);
+  }, []);
 
   return (
     <div className={`App ${theme}`}>
       <Routes>
-        <Route path="/" element={<Main toggleTheme={toggleTheme} theme={theme} />}>
+        <Route path="/" element={<Main />}>
           <Route index element={<MainPage />} />
           <Route path="authorization" element={<AuthPage />} />
           <Route path="contacts" element={<Contacts />} />
           <Route path="services" element={<ServicesList />} />
           <Route path="info" element={<Info />} />
           <Route path="profileUser" element={<ProfileUser />} />
+          <Route path="/*" element={<IncorrectPage />} />
         </Route>
       </Routes>
     </div>

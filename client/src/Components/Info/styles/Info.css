@@ -1,53 +1,77 @@
-.first_word{
-    font-size: 70px;
-    margin-right: 1400px;
+.first_word {
+  font-size: 70px;
+  margin-right: 1400px;
+  margin-left: 50px;
+  margin-bottom: -10px;
 }
 
-.name_of_think{
-    font-size: 40px;
+.name_of_think {
+  font-size: 40px;
+  margin-top: 100px;
 }
 
-.think_line{
-    border: 1px solid white;
-    height: 0,5px;
-    width: 740px;
+.think_line {
+  border: 0.5px solid white;
+  /* height: 0, 5px; */
+  width: 740px;
+  margin-top: -20px;
 }
 
-.info{
-    display: flex;
+.info {
+  display: flex;
 }
 
-.right_info{
-    margin-left: 230px;
+.right_info {
+  margin-left: 100px;
 }
 
-.left_info{
-    margin-left: 100px;
+.left_info {
+  margin-left: 50px;
 }
 
-.about_us_img{
-    width: 754px;
-    height: 1132px;
+.about_us_img {
+  width: 800px;
 }
 
-.o_nas{
-    font-size: 60px;
+.o_nas {
+  font-size: 60px;
 }
 
-.about_us{
-    display: flex;
+.about_us {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: -40px;
+  /* align-items: center; */
 }
 
-.text_about_us{
-    width: 700px;
-    margin-right: 500px;
-    margin-left: 50px;
+.text_about_us {
+  flex: 1; /* Занимает доступное пространство */
+  margin-right: 20px; /* Добавляет отступ справа */
+  margin-left: 50px;
+}
+.big_text {
+  margin-top: -70px;
+  font-size: 18px;
+  text-align: left;
+  width: 700px;
 }
 
-.big_text{
-    text-align: left;
+.o_nas {
+  text-align: left;
 }
 
-.o_nas{
-    text-align: left;
+.contactContainer {
+  display: flex;
+
+  align-items: center;
+}
+
+.left {
+  margin-left: 100px;
+}
+
+.right {
+  margin-left: 200px;
 }

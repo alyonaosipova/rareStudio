@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import BookingTimePicker from './Booking';
 import { useAppSelector, type RootState, useAppDispatch } from '../../redux/store';
 import { loadServices } from '../Services/serviceSlice';
+import { addBooking } from '../Bookings/bookingSlice';
 
 const modalStyles = {
   content: {
@@ -54,9 +55,16 @@ function ModalWindow(): JSX.Element {
     setIsModalOpen(false);
   };
 
+  const handleAddBooking = () => {
+    dispatch(addBooking({ serviceId: selectedService, startDate: selectedTime })).catch(
+      console.log,
+    );
+    closeModal(); // Предполагается, что closeModal - это функция для закрытия модального окна
+  };
+
   return (
     <>
-      <button type="button" onClick={openModal}>
+      <button className="go_on" type="button" onClick={openModal}>
         Забронировать
       </button>
       <Modal
@@ -78,7 +86,8 @@ function ModalWindow(): JSX.Element {
           <button
             className="bookButton"
             type="button"
-            style={{ margin: '20px auto', display: 'block' }}
+            onClick={handleAddBooking}
+            style={{ margin: '20px auto', width: '315px', display: 'block' }}
           >
             Выбрать
           </button>

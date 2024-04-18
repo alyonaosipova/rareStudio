@@ -1,8 +1,12 @@
 import React from 'react';
 import './styles/Footer.css';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import ModalWindow from '../Booking/ModalWindow';
+import type { RootState } from '../../redux/store';
 
 function Footer(): JSX.Element {
+  const user = useSelector((store: RootState) => store.user.user);
   return (
     <>
       <div className="line"> </div>
@@ -29,7 +33,14 @@ function Footer(): JSX.Element {
             <p className="number">+7 (981) 757-25-34</p>
             <p className="mail">Почта: rarestrare2021@gmail.com</p>
             <div className="but">
-              <ModalWindow />
+              {user && (
+                <div className="but">
+                  <ModalWindow />
+                </div>
+              )}
+              {/* <button type="button" onClick={() => navigate('/services')}>
+                Записаться
+              </button> */}
             </div>
             <div className="logoss">
               <a href="https://vk.com/rare.studio" target="_blank" rel="noopener noreferrer">

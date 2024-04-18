@@ -6,7 +6,7 @@ import App from './App/App';
 import './index.css';
 import store from './redux/store';
 
-const loadYandexMapScript = () => {
+const loadYandexMapScript = (): void => {
   const script = document.createElement('script');
   script.src =
     'https://api-maps.yandex.ru/2.1/?apikey=d9803a54-58d8-4473-ad80-7e927ebac1e1&lang=ru_RU';
