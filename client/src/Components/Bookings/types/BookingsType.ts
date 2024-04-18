@@ -1,9 +1,10 @@
 export type Booking = {
-  id?: number;
+  id: number;
   userId: number;
   serviceId: string;
   status: string;
   startDate: string;
+  Service:{title:string}
 };
 
 export type BookingType = {
