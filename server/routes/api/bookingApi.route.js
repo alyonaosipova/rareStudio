@@ -4,17 +4,17 @@ const { Booking } = require("../../db/models");
 const { Service } = require("../../db/models");
 const { User } = require("../../db/models");
 
-router.get("/user/:id/bookings", async (req, res) => {
+router.get("/user/bookings", async (req, res) => {
   try {
-    const { id } = req.params;
-    const bookings = await Booking.findOne({
-      where: { userId: id },
+    // const { id } = req.params;
+    const result = await Booking.findAll({
+      where: { userId: res.locals.user.id },
       include: {
         model: Service,
         attributes: ["title"],
       },
     });
-    res.status(200).json({ bookings });
+    res.status(200).json({ bookings: result });
   } catch ({ message }) {
     res.json(message);
   }

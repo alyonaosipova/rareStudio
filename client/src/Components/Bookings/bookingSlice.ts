@@ -7,7 +7,10 @@ const initialState: BookingType = {
   message: '',
 };
 
-export const loadBooking = createAsyncThunk('booking/load', () => api.loadBookingsUserFetch());
+export const loadBookingUser = createAsyncThunk('booking/user/load', () =>
+  api.loadBookingsUserFetch(),
+);
+export const loadBooking = createAsyncThunk('booking/load', () => api.loadBookingsAdminFetch());
 
 export const delBooking = createAsyncThunk('booking/delete', (id: IdBooking) =>
   api.delBookingUserFetch(+id),
@@ -34,6 +37,12 @@ const bookingSlice = createSlice({
         state.bookings.push(action.payload);
       })
       .addCase(addBooking.rejected, (state, action) => {
+        state.message = action.error.message;
+      })
+      .addCase(loadBookingUser.fulfilled, (state, action) => {
+        state.bookings = action.payload;
+      })
+      .addCase(loadBookingUser.rejected, (state, action) => {
         state.message = action.error.message;
       });
   },

@@ -37,9 +37,16 @@ function Navbar(): JSX.Element {
         </Link>
         {user && (
           <>
-            <Link className="navbar-link" to="/profileUser">
-              <div>Привет, {user?.name}</div>
-            </Link>
+            {user.isAdmin !== true && (
+              <Link className="navbar-link" to="/profileUser">
+                <div>Привет, {user?.name}</div>
+              </Link>
+            )}
+            {user.isAdmin === true && (
+              <Link className="navbar-link" to="/profileAdmin">
+                <div>Привет, {user?.name}</div>
+              </Link>
+            )}
             <Link className="navbar-link" to="/" onClick={() => logout()}>
               <div>Выйти</div>
             </Link>

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch } from '../../redux/store';
+import { RootState, useAppDispatch, useAppSelector } from '../../redux/store';
 import { authRegistration } from './AuthSlice';
+
 // import './styles/Rega.css'
 
 function RegistrationPage(): JSX.Element {
@@ -13,10 +14,12 @@ function RegistrationPage(): JSX.Element {
     r_password: '',
   });
   const dispatch = useAppDispatch();
+  const message = useAppSelector((store: RootState) => store.user.message);
+  // console.log(message, 'message');
 
   async function getUser(): Promise<void> {
     dispatch(authRegistration({ ...form })).catch(console.log);
-    navigate('/');
+    // navigate('/');
   }
 
   return (
@@ -61,6 +64,7 @@ function RegistrationPage(): JSX.Element {
             onChange={(e) => setForm({ ...form, r_password: e.target.value })}
           />
         </div>
+        <div className="errRega err">{message}</div>
         <button type="button" className="signin" onClick={() => getUser(form)}>
           Регистрация
         </button>

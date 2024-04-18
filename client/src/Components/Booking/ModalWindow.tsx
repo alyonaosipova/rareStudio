@@ -29,13 +29,13 @@ function ModalWindow(): JSX.Element {
   const dispatch = useAppDispatch();
 
   const services = useAppSelector((store: RootState) => store.services.services);
-  console.log(services);
+  // console.log(services);
 
   useEffect(() => {
     dispatch(loadServices()).catch(console.log);
   }, []);
 
-  console.log(services, 'services');
+  // console.log(services, 'services');
 
   const [selectedService, setSelectedService] = useState('');
 

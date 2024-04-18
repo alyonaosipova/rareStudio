@@ -16,9 +16,11 @@ import { checkFetch } from '../Components/Auth/apiAuth';
 import { authCheck } from '../Components/Auth/AuthSlice';
 import Contacts from '../Components/Info/Contacts';
 import IncorrectPage from '../Components/IncorrectPage/IncorrectPage';
+import ProfileAdmin from '../Components/Profile/ProfileAdmin';
 
 function App(): JSX.Element {
   const { theme, toggleTheme } = useTheme();
+
   const dispatch = useAppDispatch();
   const user = useSelector((store: RootState) => store.user.user);
 
@@ -36,6 +38,7 @@ function App(): JSX.Element {
           <Route path="services" element={<ServicesList />} />
           <Route path="info" element={<Info />} />
           <Route path="profileUser" element={<ProfileUser />} />
+          <Route path="profileAdmin" element={<ProfileAdmin />} />
           <Route path="/*" element={<IncorrectPage />} />
         </Route>
       </Routes>
