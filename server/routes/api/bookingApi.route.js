@@ -39,6 +39,7 @@ router.post("/user/newBooking", async (req, res) => {
 router.delete("/user/delBooking/:id", async (req, res) => {
   try {
     const { id } = req.params;
+    console.log(id, 11111);
     const delBooking = await Booking.destroy({ where: { id } });
 
     if (delBooking) {
@@ -66,7 +67,9 @@ router.get("/admin/booking", async (req, res) => {
 router.put("/admin/booking/:id", async (req, res) => {
   try {
     const { id } = req.params;
+    console.log(id);
     const { status } = req.body;
+    console.log(status);
     if (status) {
       const resultBooking = await Booking.update({ where: { id } }, { status });
       if (result[0] > 0) {

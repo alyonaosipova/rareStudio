@@ -18,6 +18,8 @@ export const delBooking = createAsyncThunk('booking/delete', (id: IdBooking) =>
 
 export const addBooking = createAsyncThunk('booking/add', (obj) => api.addBookingFetch(obj));
 
+export const confBooking = createAsyncThunk('booking/conf', (obj: {id: number, status: string}) => api.confBookingFetch(obj));
+
 const bookingSlice = createSlice({
   name: 'bookings',
   initialState,
@@ -44,7 +46,7 @@ const bookingSlice = createSlice({
       })
       .addCase(loadBookingUser.rejected, (state, action) => {
         state.message = action.error.message;
-      });
+      })
   },
 });
 
