@@ -11,8 +11,6 @@ interface BookingTimePickerProps {
 function BookingTimePicker({ selectedDate, onTimeChange }: BookingTimePickerProps): JSX.Element {
   const [selectedTime, setSelectedTime] = useState<Date>(new Date());
 
-  // console.log(selectedTime);
-
   const handleTimeChange = (time: Date): void => {
     setSelectedTime(time);
     onTimeChange(time); // Передаем выбранное время в родительский компонент

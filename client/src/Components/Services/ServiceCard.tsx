@@ -1,9 +1,11 @@
 import React, { type FormEvent, useState } from 'react';
-import { useAppDispatch } from '../../redux/store';
+import { RootState, useAppDispatch } from '../../redux/store';
 import { delService, updService } from './serviceSlice';
+import { useSelector } from 'react-redux';
 import type { Service } from './types/ServicesType';
 import './styles/Service.css';
 import ModalWindow from '../Booking/ModalWindow';
+import { useNavigate } from 'react-router-dom';
 
 function ServiceCard({ service }: { service: Service }): JSX.Element {
   const [form, setForm] = useState({
@@ -13,6 +15,9 @@ function ServiceCard({ service }: { service: Service }): JSX.Element {
   });
   const [states, setState] = useState(true);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
+  const user = useSelector((store: RootState) => store.user.user);
 
   const deleteService = (): void => {
     dispatch(delService(service.id)).catch(console.log);
@@ -39,19 +44,24 @@ function ServiceCard({ service }: { service: Service }): JSX.Element {
             </div>
           </div>
           <div className="buttonService">
-            <img
-              className="icons refresh"
-              src="refresh.png"
-              alt="..."
-              onClick={() => setState(false)}
-            />
-            <img className="icons delete" src="xxxxx.png" alt="..." onClick={deleteService} />
+            {user?.isAdmin === true && (
+              <>
+                <img
+                  className="icons refresh"
+                  src="refresh.png"
+                  alt="..."
+                  onClick={() => setState(false)}
+                />
+                <img className="icons delete" src="xxxxx.png" alt="..." onClick={deleteService} />
+              </>
+            )}
+            {user && <ModalWindow />}
 
-            <ModalWindow />
-
-            {/* <button type="button" className="go_on">
-              ЗАПИСАТЬСЯ
-            </button> */}
+            {!user && (
+              <button type="button" className="go_on" onClick={() => navigate('/authorization')}>
+                ЗАПИСАТЬСЯ
+              </button>
+            )}
           </div>
         </div>
       ) : (

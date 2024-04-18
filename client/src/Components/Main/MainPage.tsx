@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactAudioPlayer from 'react-audio-player';
+import { useSelector } from 'react-redux';
 import Carousel from './Carousel';
 import Header from '../Header/Header';
 import VideoPlayer from './Youtube';
+import ModalWindow from '../Booking/ModalWindow';
+import type { RootState } from '../../redux/store';
 
 function MainPage(): JSX.Element {
+  const user = useSelector((store: RootState) => store.user.user);
+
   return (
     <>
       <Header />
-
+      {user && <ModalWindow />}
       <br />
       <br />
       <br />

@@ -2,8 +2,10 @@
 /* eslint-disable guard-for-in */
 /* eslint-disable no-restricted-syntax */
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../../redux/store';
 import { addService } from './serviceSlice';
+import type { RootState } from '../../redux/store';
 
 function ServiceAdd(): JSX.Element {
   const [form, setForm] = useState({
@@ -13,6 +15,8 @@ function ServiceAdd(): JSX.Element {
     price: '',
   });
   const dispatch = useAppDispatch();
+  const user = useSelector((store: RootState) => store.user.user);
+  console.log('admin', user?.isAdmin);
 
   async function addServiceFunc(): Promise<void> {
     dispatch(addService({ ...form }))
@@ -37,8 +41,8 @@ function ServiceAdd(): JSX.Element {
       <nav className="no-space">
         <div className="add_title">
           <input
-            placeholder='TITLE'
-            className='title_in'
+            placeholder="TITLE"
+            className="title_in"
             type="title"
             value={form.title}
             onChange={(e) => setForm({ ...form, title: e.target.value })}
@@ -48,8 +52,8 @@ function ServiceAdd(): JSX.Element {
       <nav className="no-space">
         <div className="add_description">
           <input
-          placeholder='DESCRIPTION'
-          className='title_in'
+            placeholder="DESCRIPTION"
+            className="title_in"
             type="description"
             value={form.description}
             onChange={(e) => setForm({ ...form, description: e.target.value })}
@@ -59,8 +63,8 @@ function ServiceAdd(): JSX.Element {
       <nav>
         <div className="add_price">
           <input
-          placeholder='PRICE'
-          className='title_in'
+            placeholder="PRICE"
+            className="title_in"
             type="price"
             value={form.price}
             onChange={(e) => setForm({ ...form, price: e.target.value })}
@@ -68,7 +72,7 @@ function ServiceAdd(): JSX.Element {
         </div>
       </nav>
       <nav>
-        <button type="submit" className="max large round">
+        <button type="submit" className="add_card_add">
           добавить услугу
         </button>
       </nav>

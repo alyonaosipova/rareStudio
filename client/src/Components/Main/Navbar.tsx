@@ -12,7 +12,6 @@ function Navbar(): JSX.Element {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const user = useSelector((store: RootState) => store.user.user);
-
   async function logout(): Promise<void> {
     dispatch(authLogout()).catch(console.log);
     navigate('/');
