@@ -3,6 +3,7 @@ const { Sequelize } = require("sequelize");
 const { Booking } = require("../../db/models");
 const { Service } = require("../../db/models");
 const { User } = require("../../db/models");
+const {sendMail} = require("../../utils/sendMail")
 
 router.get("/user/bookings", async (req, res) => {
   try {
@@ -68,11 +69,20 @@ router.put("/admin/booking/:id", async (req, res) => {
     const { id } = req.params;
     const { status } = req.body;
     if (status) {
-      const resultBooking = await Booking.update({ where: { id } }, { status });
-      if (result[0] > 0) {
-        const updateBookig = await Booking.findOne({ where: { id } });
-        res.json({ updateBookig });
-      } else {
+      
+      const [,resultBooking] = await Booking.update({ status },{ where: { id }, returning:true } );
+      console.log(resultBooking);
+      if (resultBooking[0].status === 'confirmed') {
+        const user = await User.findOne({where:{id:resultBooking[0].userId}})
+        console.log(user)
+        const text = `Добрый день, ${user.name} ваше бронирование подтвержденно`
+        await sendMail(user.email,'Ваше бронирование подтвержденно',text)
+        res.json( resultBooking[0]);
+        
+      } 
+      else if(resultBooking[0].status === 'rejected'){ 
+        
+      }else {
         res.json({ message: "Not update" });
       }
     }
