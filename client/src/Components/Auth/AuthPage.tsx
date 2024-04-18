@@ -19,14 +19,14 @@ function AuthPage(): JSX.Element {
         <>
           <LoginPage />
           <button type="button" onClick={handleRegisterClick}>
-            Rega
+            Зарегистрироваться
           </button>
         </>
       ) : (
         <>
           <RegistrationPage />
           <button type="button" onClick={handleLoginClick}>
-            Loga
+            Войти
           </button>
         </>
       )}

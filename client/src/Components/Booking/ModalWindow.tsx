@@ -75,7 +75,11 @@ function ModalWindow(): JSX.Element {
               </option>
             ))}
           </select>
-          <button type="button" style={{ margin: '20px auto', display: 'block' }}>
+          <button
+            className="bookButton"
+            type="button"
+            style={{ margin: '20px auto', display: 'block' }}
+          >
             Выбрать
           </button>
         </div>
