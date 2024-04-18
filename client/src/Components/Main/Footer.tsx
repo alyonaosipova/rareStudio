@@ -1,8 +1,10 @@
 import React from 'react';
 import './styles/Footer.css';
-import ModalWindow from '../Booking/ModalWindow';
+import { useNavigate } from 'react-router-dom';
 
 function Footer(): JSX.Element {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="line"> </div>
@@ -29,7 +31,9 @@ function Footer(): JSX.Element {
             <p className="number">+7 (981) 757-25-34</p>
             <p className="mail">Почта: rarestrare2021@gmail.com</p>
             <div className="but">
-              <ModalWindow />
+              <button type="button" onClick={() => navigate('/services')}>
+                Записаться
+              </button>
             </div>
             <div className="logoss">
               <a href="https://vk.com/rare.studio" target="_blank" rel="noopener noreferrer">

@@ -1,0 +1,19 @@
+.vinil {
+  height: 600px;
+}
+.rotating-image {
+  animation: rotateAnimation 4s linear infinite; /* Анимация: вращение в течение 4 секунд с линейным характером и бесконечным повторением */
+}
+
+.back {
+  margin-top: 40px;
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg); /* Начальный угол вращения */
+  }
+  to {
+    transform: rotate(360deg); /* Конечный угол вращения (полный оборот) */
+  }
+}

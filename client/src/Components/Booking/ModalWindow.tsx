@@ -56,7 +56,7 @@ function ModalWindow(): JSX.Element {
 
   return (
     <>
-      <button type="button" onClick={openModal}>
+      <button className="go_on" type="button" onClick={openModal}>
         Забронировать
       </button>
       <Modal
@@ -78,7 +78,7 @@ function ModalWindow(): JSX.Element {
           <button
             className="bookButton"
             type="button"
-            style={{ margin: '20px auto', display: 'block' }}
+            style={{ margin: '20px auto', width: '315px', display: 'block' }}
           >
             Выбрать
           </button>

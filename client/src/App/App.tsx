@@ -15,6 +15,7 @@ import { useSelector } from 'react-redux';
 import { checkFetch } from '../Components/Auth/apiAuth';
 import { authCheck } from '../Components/Auth/AuthSlice';
 import Contacts from '../Components/Info/Contacts';
+import IncorrectPage from '../Components/IncorrectPage/IncorrectPage';
 
 function App(): JSX.Element {
   const { theme, toggleTheme } = useTheme();
@@ -30,6 +31,7 @@ function App(): JSX.Element {
           <Route path="services" element={<ServicesList />} />
           <Route path="info" element={<Info />} />
           <Route path="profileUser" element={<ProfileUser />} />
+          <Route path="/*" element={<IncorrectPage />} />
         </Route>
       </Routes>
     </div>
