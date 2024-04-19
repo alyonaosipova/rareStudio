@@ -27,6 +27,8 @@ export const addServicesFetch = async (obj: ServiceAddForm): Promise<Service> =>
 };
 
 export const updServicesFetch = async (obj: Service): Promise<Service> => {
+  console.log("obj", obj);
+  
   const response: AxiosResponse<{ message: string; service: Service }> = await axios.put(
     `/api/service/admin/services/${obj.id}`,
     obj,
