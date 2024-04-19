@@ -76,6 +76,12 @@ button:focus-visible {
   text-align: center; /* Центрируем содержимое по горизонтали */
 }
 
+.helloAdmin,
+.helloUser {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
 .insideModal select {
   width: 75%; /* Занимает всю доступную ширину */
   height: 30px;

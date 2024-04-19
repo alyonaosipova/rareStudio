@@ -10,6 +10,8 @@ function Carousel(): JSX.Element {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    autoplay: true, // Добавляем параметр autoplay
+    autoplaySpeed: 1500,
     // nextArrow: style={ right: '20px' } />,
   };
 
@@ -20,6 +22,8 @@ function Carousel(): JSX.Element {
       speed={settings.speed}
       slidesToShow={settings.slidesToShow}
       slidesToScroll={settings.slidesToScroll}
+      autoplay={settings.autoplay}
+      autoplaySpeed={settings.autoplaySpeed}
     >
       <div>
         <img className="carousel" src="IMG_8906.jpg" alt="1" />

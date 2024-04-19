@@ -44,7 +44,7 @@ function BookingUser(): JSX.Element {
         <tbody>
           {booking?.map((book) => (
             <tr key={book.id}>
-              <td>{book.Service.title}</td>
+              <td>{book?.Service?.title}</td>
 
               <td>{norm(book.startDate)}</td>
               <td>

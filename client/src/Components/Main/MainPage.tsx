@@ -52,6 +52,7 @@ function MainPage(): JSX.Element {
             title="FRIENDLY THUG 52 NGG - Lost Angeles"
             className="audio-title"
           />
+          <br />
           <ReactAudioPlayer
             src="ICEGERGERT - Русские воры.mp3"
             autoPlay={false}
