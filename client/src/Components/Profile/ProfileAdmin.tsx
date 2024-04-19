@@ -4,7 +4,7 @@ import BookingAdmin from '../Bookings/BookingsAdmin';
 function ProfileAdmin(): JSX.Element {
   return (
     <>
-      <div>ADMIN</div>
+      <div className="helloAdmin">Привет, Админ!</div>
       <BookingAdmin />
     </>
   );

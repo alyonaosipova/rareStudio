@@ -10,8 +10,8 @@ function IncorrectPage(): JSX.Element {
         <h1>404</h1>
         <img className="vinil rotating-image" src="vinil.png" alt="." />
       </div>
-      <button className="back" type="button" onClick={() => navigate(-1)}>
-        Вернуться назад
+      <button className="back" type="button" onClick={() => navigate('/')}>
+        Вернуться на главную
       </button>
     </>
   );
