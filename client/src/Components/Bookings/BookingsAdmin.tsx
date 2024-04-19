@@ -9,14 +9,16 @@ function BookingAdmin(): JSX.Element {
   
   const dispatch = useAppDispatch();
 
+
   useEffect(() => {
     dispatch(loadBooking()).catch(console.log);
   }, []);
 
  const confirmBooking = (id: number, status: string): void => {
-    dispatch(confBooking({id, status})).catch(console.log);
-    dispatch(delBooking(id)).catch(console.log);
-
+    console.log(id, status, '--------');
+    dispatch(confBooking({id, status}))
+    .then(() => dispatch(delBooking(id)))
+    .catch(console.log);
  }
  
 
@@ -57,8 +59,8 @@ function BookingAdmin(): JSX.Element {
               <td>{book?.Service?.title}</td>
               <td>{norm(book.startDate)}</td>
               <td>
-               <button className='delete_booking' type='button' onClick={()=>confirmBooking(book.id, 'confirmed')}>одобрить</button>
-                <button className='delete_booking' type='button'onClick={()=>confirmBooking(book.id, 'rejected')} >отклонить</button>
+               <button className='delete_booking' type='button' onClick={()=>confirmBooking(book?.id, 'confirmed')}>одобрить</button>
+                <button className='delete_booking' type='button'onClick={()=>confirmBooking(book?.id, 'rejected')} >отклонить</button>
               </td>
             </tr>
           ))}

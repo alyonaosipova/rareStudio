@@ -12,7 +12,7 @@ export const loadBookingUser = createAsyncThunk('booking/user/load', () =>
 );
 export const loadBooking = createAsyncThunk('booking/load', () => api.loadBookingsAdminFetch());
 
-export const delBooking = createAsyncThunk('booking/delete', (id: IdBooking) =>
+export const delBooking = createAsyncThunk('booking/delete', (id: number) =>
   api.delBookingUserFetch(+id),
 );
 
