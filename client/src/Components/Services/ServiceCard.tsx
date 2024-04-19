@@ -30,17 +30,23 @@ function ServiceCard({ service }: { service: Service }): JSX.Element {
     setState(true); // Reset the state after successful update
   };
 
+  const str = (service.description).split('—')
+  console.log(str);
+  
+  
+  
+
   return (
     <div className="serviceCard" data-id={service.id}>
       {states ? (
         <div className="one_card_div">
           <div className="cart_text">
             <div className="card_price">
-              <h3>от {service.price} р</h3>
+              <h3>от {service.price} ₽</h3>
             </div>
             <div className="card_title_discription">
               <h3>{service.title}</h3>
-              <p>{service.description}</p>
+              <p>{str.map((el)=> <p>{el}</p>)}</p>
             </div>
           </div>
           <div className="buttonService">

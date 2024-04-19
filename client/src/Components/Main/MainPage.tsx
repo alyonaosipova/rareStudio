@@ -6,6 +6,7 @@ import Header from '../Header/Header';
 import VideoPlayer from './Youtube';
 import ModalWindow from '../Booking/ModalWindow';
 import type { RootState } from '../../redux/store';
+import './styles/audoi.css'
 
 function MainPage(): JSX.Element {
   const user = useSelector((store: RootState) => store.user.user);
