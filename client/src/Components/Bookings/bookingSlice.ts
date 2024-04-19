@@ -18,7 +18,9 @@ export const delBooking = createAsyncThunk('booking/delete', (id: IdBooking) =>
 
 export const addBooking = createAsyncThunk('booking/add', (obj) => api.addBookingFetch(obj));
 
-export const confBooking = createAsyncThunk('booking/conf', (obj: {id: number, status: string}) => api.confBookingFetch(obj));
+export const confBooking = createAsyncThunk('booking/conf', (obj: { id: number; status: string }) =>
+  api.confBookingFetch(obj),
+);
 
 const bookingSlice = createSlice({
   name: 'bookings',
@@ -47,6 +49,18 @@ const bookingSlice = createSlice({
       .addCase(loadBookingUser.rejected, (state, action) => {
         state.message = action.error.message;
       })
+      .addCase(confBooking.fulfilled, (state, action) => {
+        state.bookings = state.bookings.filter((booking) => {
+          if ((booking.id = action.payload.id)) {
+            return action.payload;
+          } else {
+            return booking;
+          }
+        });
+      })
+      .addCase(confBooking.rejected, (state, action) => {
+        state.message = action.error.message;
+      });
   },
 });
 

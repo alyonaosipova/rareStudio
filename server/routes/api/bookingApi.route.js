@@ -54,10 +54,14 @@ router.delete("/user/delBooking/:id", async (req, res) => {
 router.get("/admin/booking", async (req, res) => {
   try {
     const result = await Booking.findAll({
-      include: {
+      include: [{
         model: Service,
         attributes: ["title"],
-      },
+      },{
+        model: User,
+        attributes:['name']
+      }]
+       
     });
     res.json({ bookings: result });
   } catch ({ message }) {
@@ -66,25 +70,29 @@ router.get("/admin/booking", async (req, res) => {
 });
 
 router.put("/admin/booking/:id", async (req, res) => {
+  console.log(req.body);
   try {
     const { id } = req.params;
-    console.log(id);
     const { status } = req.body;
-    console.log(status);
+ 
     if (status) {
-      
-      const [,resultBooking] = await Booking.update({ status },{ where: { id }, returning:true } );
-      console.log(resultBooking);
-      if (resultBooking[0].status === 'confirmed') {
-        const user = await User.findOne({where:{id:resultBooking[0].userId}})
-        console.log(user)
-        const text = `Добрый день, ${user.name} ваше бронирование подтвержденно`
-        await sendMail(user.email,'Ваше бронирование подтвержденно',text)
-        res.json( resultBooking[0]);
+      const resultTmpBooking = await Booking.update({ status },{ where: { id }} );
+      if (resultTmpBooking[0] > 0){
+        resultBooking = await Booking.findOne({ where: { id }} )
+      }
+  
+      if (resultBooking.status === 'confirmed') {
+        const user = await User.findOne({where:{id:resultBooking.userId}})
+        const text = `Здравстуйте, ${user.name} ваше бронирование подтвержденно`
+        await sendMail(user.email,'Вас приветствует студию звукозаписи RareStudio!',text)
+        res.json(resultBooking);
         
       } 
-      else if(resultBooking[0].status === 'rejected'){ 
-        
+      else if(resultBooking.status === 'rejected'){ 
+        const user = await User.findOne({where:{id:resultBooking.userId}})
+        const text = `Здравстуйте, ${user.name} к сожалению ваша запись отклонена`
+        await sendMail(user.email,'Вас приветствует студию звукозаписи RareStudio!',text)
+        res.json( resultBooking);
       }else {
         res.json({ message: "Not update" });
       }

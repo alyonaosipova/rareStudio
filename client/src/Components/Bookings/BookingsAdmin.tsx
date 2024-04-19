@@ -1,23 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../redux/store';
-import { loadBooking, confBooking } from './bookingSlice';
+import { loadBooking, confBooking, delBooking } from './bookingSlice';
 
 function BookingAdmin(): JSX.Element {
   // const[status, setStatus] = useState()
-  const bookings = useAppDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    bookings(loadBooking()).catch(console.log);
+    dispatch(loadBooking()).catch(console.log);
   }, []);
 
- const delBooking = (id: number, status: string): void => {
-  bookings(confBooking({id, status})).catch(console.log);
+
+ const confirmBooking = (id: number, status: string): void => {
+    dispatch(confBooking({id, status})).catch(console.log);
+    dispatch(delBooking(id)).catch(console.log);
+
  }
  
   const booking = useSelector((store: RootState) => store.booking.bookings);
-  console.log(booking);
 
+  console.log(booking);
+  
   function norm (date: string): string{
     const dateTime = new Date(date);
 
@@ -35,12 +39,16 @@ function BookingAdmin(): JSX.Element {
       {booking?.map((book) => (
         <div className='booking_mapped' key={book.id}>
           НАИМЕНОВАНИЕ УСЛУГИ: 
-          {book.Service.title}
+          {book?.Service?.title}
+          <br />
+            ИМЯ ЮЗЕРА:
+            {book?.User?.name}
+          
           <br />
           {`ВРЕМЯ БРОНИ: ${norm(book.startDate)}`}
           <div>
-            <button className='delete_booking' type='button' >одобрить</button>
-            <button className='delete_booking' type='button'onClick={()=>delBooking(book.id, 'rejected')} >отклонить</button>
+            <button className='delete_booking' type='button' onClick={()=>confirmBooking(book.id, 'confirmed')}>одобрить</button>
+            <button className='delete_booking' type='button'onClick={()=>confirmBooking(book.id, 'rejected')} >отклонить</button>
           </div>
         </div>
       ))}

@@ -28,8 +28,10 @@ export const addBookingFetch = async (obj:Booking): Promise<Booking> => {
   return response.data;
 };
 
-export const confBookingFetch = async ( obj: {id: number, status:string}): Promise<Booking> =>{
-  const response: AxiosResponse<Booking> = await axios.put(`/api/bookings/admin/booking/${obj.id}`, obj);
+export const confBookingFetch = async (obj :{id: number, status:string}): Promise<Booking> =>{
+    console.log(obj);
+    
+  const response: AxiosResponse<Booking> = await axios.put(`/api/bookings/admin/booking/${obj.id}`, {status:obj.status});
   return response.data
 }
 
