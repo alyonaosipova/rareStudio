@@ -32,16 +32,7 @@ function Footer(): JSX.Element {
             <p className="textcont">КОНТАКТЫ</p>
             <p className="number">+7 (981) 757-25-34</p>
             <p className="mail">Почта: rarestrare2021@gmail.com</p>
-            <div className="but">
-              {user && (
-                <div className="but">
-                  <ModalWindow />
-                </div>
-              )}
-              {/* <button type="button" onClick={() => navigate('/services')}>
-                Записаться
-              </button> */}
-            </div>
+
             <div className="logoss">
               <a href="https://vk.com/rare.studio" target="_blank" rel="noopener noreferrer">
                 <img className="vklogo" src="vk.png" alt="да еще одна для Дианы" />

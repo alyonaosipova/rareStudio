@@ -10,19 +10,30 @@ import './styles/Login.css';
 
 function SignInForm(): JSX.Element {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  // const [viewMessage, setMessage] = useState('');
+  const user = useSelector((store: RootState) => store.user.user);
+  let message = useSelector((store: RootState) => store.user.message);
+
   const [form, setForm] = useState({
     email: '',
     password: '',
   });
-  const dispatch = useAppDispatch();
-  const user = useSelector((store: RootState) => store.user.user);
-  let message = useSelector((store: RootState) => store.user.message);
 
   useEffect(() => {
     if (user !== undefined) {
       navigate('/');
     }
   }, [user]);
+
+  // useEffect(() => {
+  //   if (message !== undefined) {
+  //     setMessage(message);
+  //   }
+  //   setTimeout(() => {
+  //     setMessage('');
+  //   }, 1500);
+  // }, [message]);
 
   async function getUser(): Promise<void> {
     dispatch(authLogin({ ...form })).catch(console.log);

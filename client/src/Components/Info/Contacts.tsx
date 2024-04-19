@@ -9,13 +9,13 @@ function Contacts(): JSX.Element {
       <Header />
       <div className="contactContainer">
         <div className="left">
-          <h1>КОНТАКТЫ</h1>
+          <h1 className="contactText">КОНТАКТЫ</h1>
           <MyYandexMap />
         </div>
-        <div className="right">
+        <div className="right rightInfo">
           <p className="number">+7 (981) 757-25-34</p>
           <p className="mail">Почта: rarestrare2021@gmail.com</p>
-          <div className="address_footer">
+          <div className="addressContact">
             <img
               className="png"
               src="https://s3-alpha-sig.figma.com/img/b39e/34b8/e7f1f7e60c4cdefa290e026f60cc2d1a?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=NmwInblDkHQ-PPPNYtujW7uciehJU~3kD2eFDS2WvgHrcF5QJvLZR5ZLP8mqURZcwS9BJMdxdpqz4fXAKyTNaWnVHt8qDjnH4mgAGS3ZSA3sM4H~3JFE2es8bGbwUGdafnu8b9orW4myrR5BH3bV4uFbVrfJBHmWQ7FzR78awD763bwEFXBwpRQZI4k~ndy0vCQYIXrCulVzaOtOnxXaUJ~kG5bL4tKNv3cGYoFlbDUfe8sDZCroSJqLtW5cqBLsa589DVz3suR8RKfx8PzGk5IuPAo9jsaoy~wF8mOlHlkdpgecXc6kr4L1O3ltQTqVIwLzlRcXPGr73DUZ8zQoAw__"

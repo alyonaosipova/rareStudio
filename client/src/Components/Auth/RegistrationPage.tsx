@@ -8,21 +8,32 @@ import { useSelector } from 'react-redux';
 
 function RegistrationPage(): JSX.Element {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  let message = useSelector((store: RootState) => store.user.message);
+  const user = useSelector((store: RootState) => store.user.user);
+
+  // const [viewMessage, setMessage] = useState('');
   const [form, setForm] = useState({
     email: '',
     name: '',
     password: '',
     r_password: '',
   });
-  const dispatch = useAppDispatch();
-  const user = useSelector((store: RootState) => store.user.user);
-  let message = useSelector((store: RootState) => store.user.message);
 
   useEffect(() => {
     if (user !== undefined) {
       navigate('/');
     }
   }, [user]);
+
+  // useEffect(() => {
+  //   if (message !== undefined) {
+  //     setMessage(message);
+  //   }
+  //   setTimeout(() => {
+  //     setMessage('');
+  //   }, 1500);
+  // }, [message]);
 
   async function getUser(): Promise<void> {
     dispatch(authRegistration({ ...form })).catch(console.log);

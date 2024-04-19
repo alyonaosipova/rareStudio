@@ -13,7 +13,7 @@ function MainPage(): JSX.Element {
   return (
     <>
       <Header />
-      {user && <ModalWindow />}
+
       <br />
       <br />
       <br />
@@ -33,27 +33,49 @@ function MainPage(): JSX.Element {
             src="MAYOT, SEEMEE feat. OG Buda - ТРИМ.mp3"
             autoPlay={false}
             controls
-            title="MAYOT, SEEMEE feat. OG Buda - ТРИМ.mp3"
+            title="MAYOT, SEEMEE feat. OG Buda - ТРИМ"
             className="audio-title"
           />
           <br />
-          <ReactAudioPlayer src="Brick Bazuka - День сурка.mp3" autoPlay={false} controls />
+          <ReactAudioPlayer
+            src="Brick Bazuka - День сурка.mp3"
+            autoPlay={false}
+            controls
+            title="Brick Bazuka - День сурка"
+            className="audio-title"
+          />
           <br />
           <ReactAudioPlayer
             src="FRIENDLY THUG 52 NGG - Lost Angeles.mp3"
             autoPlay={false}
             controls
+            title="FRIENDLY THUG 52 NGG - Lost Angeles"
+            className="audio-title"
           />
-          <ReactAudioPlayer src="ICEGERGERT - Русские воры.mp3" autoPlay={false} controls />
+          <ReactAudioPlayer
+            src="ICEGERGERT - Русские воры.mp3"
+            autoPlay={false}
+            controls
+            title="ICEGERGERT - Русские воры"
+            className="audio-title"
+          />
           <br />
           <ReactAudioPlayer
             src="SaintPrince 52 feat. PirateBay - Клан Сопрано.mp3"
             autoPlay={false}
             controls
+            title="SaintPrince 52 feat. PirateBay - Клан Сопрано"
+            className="audio-title"
           />
           <br />
 
-          <ReactAudioPlayer src="Костя_Катя_и_Влад_тройка_друзей.mp3" autoPlay={false} controls />
+          <ReactAudioPlayer
+            src="Костя_Катя_и_Влад_тройка_друзей.mp3"
+            autoPlay={false}
+            controls
+            title="Костя_Катя_и_Влад_тройка_друзей"
+            className="audio-title"
+          />
           <br />
         </div>
         <br />

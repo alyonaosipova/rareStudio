@@ -12,7 +12,7 @@ router.post("/sign-up", async (req, res) => {
     const { name, email, password, r_password } = req.body;
 
     if (password !== r_password) {
-      res.status(401).json({ message: "пвроли не совпадают" });
+      res.status(401).json({ message: "пароли не совпадают" });
       return;
     }
 

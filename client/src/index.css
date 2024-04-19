@@ -50,7 +50,12 @@ button {
   justify-content: center;
   align-items: center;
 }
-
+.oneAudio {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 .musicContainer,
 .VideoPlayer {
   flex: 0.5; /* Равномерное распределение пространства между элементами */

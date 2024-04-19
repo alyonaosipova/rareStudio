@@ -1,7 +1,7 @@
 .first_word {
   font-size: 70px;
   margin-right: 1400px;
-  margin-left: 50px;
+  margin-left: 120px;
   margin-bottom: -10px;
 }
 
@@ -20,13 +20,13 @@
 .info {
   display: flex;
 }
-
-.right_info {
-  margin-left: 100px;
+.contactText {
+  font-size: 80px;
+  margin-left: 50px;
 }
 
 .left_info {
-  margin-left: 50px;
+  margin-left: 120px;
 }
 
 .about_us_img {
@@ -35,6 +35,7 @@
 
 .o_nas {
   font-size: 60px;
+  margin-left: 60px;
 }
 
 .about_us {
@@ -56,6 +57,7 @@
   font-size: 18px;
   text-align: left;
   width: 700px;
+  margin-left: 60px;
 }
 
 .o_nas {
@@ -72,6 +74,15 @@
   margin-left: 100px;
 }
 
-.right {
-  margin-left: 200px;
+.rightInfo {
+  margin-top: 300px;
+  text-align: left;
+  margin-left: 150px;
+}
+
+.addressContact {
+  display: flex;
+  margin-left: -15px;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
