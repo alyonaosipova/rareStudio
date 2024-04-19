@@ -18,14 +18,17 @@
 
 .card_price {
   margin-left: 20px;
-  margin-right: 30px;
+  margin-right: 20px;
   width: 150px;
 }
 
 .card_title_discription {
-  width: 200px;
-  height: 300px;
+  width: 60%;
+  height: 350px;
   text-align: left;
+  word-wrap: break-word;
+  overflow-y: scroll;
+  padding-bottom: 10px;
 }
 
 .icons {

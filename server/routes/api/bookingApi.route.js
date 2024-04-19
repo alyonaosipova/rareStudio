@@ -83,14 +83,14 @@ router.put("/admin/booking/:id", async (req, res) => {
   
       if (resultBooking.status === 'confirmed') {
         const user = await User.findOne({where:{id:resultBooking.userId}})
-        const text = `Здравстуйте, ${user.name} ваше бронирование подтвержденно`
+        const text = `Здравстуйте, ${user.name} вас приветствует студия звукозаписи RareStudio, ваша заявка на бронирование одобрена`
         await sendMail(user.email,'Вас приветствует студию звукозаписи RareStudio!',text)
         res.json(resultBooking);
         
       } 
       else if(resultBooking.status === 'rejected'){ 
         const user = await User.findOne({where:{id:resultBooking.userId}})
-        const text = `Здравстуйте, ${user.name} к сожалению ваша запись отклонена`
+        const text = `Здравстуйте, ${user.name} вас приветствует студия звукозаписи RareStudio, ваша заявка на бронированию к сожалению отклонена`
         await sendMail(user.email,'Вас приветствует студию звукозаписи RareStudio!',text)
         res.json( resultBooking);
       }else {
