@@ -22,7 +22,7 @@ function ServicesList(): JSX.Element {
   return (
     <div>
       <Header />
-      <h1>УСЛУГИ RARE STUDIO</h1>
+      <p className="uslugi">УСЛУГИ RARE STUDIO</p>
       {user?.isAdmin === true && <ServiceAdd />}
       <div className="cards_map">
         <div className="list">

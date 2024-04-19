@@ -55,6 +55,7 @@ function ServiceAdd(): JSX.Element {
             placeholder="DESCRIPTION"
             className="title_in"
             type="description"
+            maxLength={500000}
             value={form.description}
             onChange={(e) => setForm({ ...form, description: e.target.value })}
           />

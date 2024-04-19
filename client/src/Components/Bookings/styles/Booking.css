@@ -1,8 +1,23 @@
-.booking_mapped{
-    border: 1px solid white;
-    width: 340px;
+.delete_booking {
+  width: 340px;
+  border: 1px solid white !important;
+}
+.ok_booking {
+  margin-right: 8px;
+  border: 1px solid white !important;
 }
 
-.delete_booking{
-    width: 340px;
+.tableContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.tableAdmin {
+  border-collapse: collapse;
+}
+
+.tableAdmin th,
+.tableAdmin td {
+  border: 1px solid rgb(255, 255, 255); /* Граница для ячеек */
+  padding: 8px; /* Отступ внутри ячеек */
 }

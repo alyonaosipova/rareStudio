@@ -55,7 +55,7 @@ function ServiceCard({ service }: { service: Service }): JSX.Element {
                 <img className="icons delete" src="xxxxx.png" alt="..." onClick={deleteService} />
               </>
             )}
-            {user && <ModalWindow />}
+            {!user?.isAdmin && user && <ModalWindow />}
 
             {!user && (
               <button type="button" className="go_on" onClick={() => navigate('/authorization')}>

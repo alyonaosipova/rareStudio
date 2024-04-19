@@ -10,7 +10,6 @@
   height: 60px;
   display: flex;
   justify-content: center;
-  justify-content: space-around;
 }
 
 .cart_text {
@@ -36,12 +35,22 @@
 .delete {
   cursor: pointer;
   margin-top: 10px;
-  margin-left: -300px;
+
+  /* margin-left: -110px; */
 }
+
+.uslugi {
+  font-size: 60px;
+  margin-left: 60px;
+  margin-left: -600px;
+}
+
 .refresh {
   cursor: pointer;
   margin-top: 10px;
-  margin-left: -130px;
+  margin-right: 20px;
+  margin-left: -380px;
+  /* margin-left: -50px; */
 }
 .go_on {
   margin-top: 10px;
